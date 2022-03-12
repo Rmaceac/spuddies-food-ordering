@@ -1,8 +1,9 @@
 DROP TABLE IF EXISTS orders CASCADE;
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY NOT NULL,
-  users_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  order_date DATE NOT NULL,
-  total_price INTEGER NOT NULL,
-  quantity INTEGER NOT NULL
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  order_time TIMESTAMP NOT NULL,
+  total_price MONEY NOT NULL,
+  is_ready BOOLEAN DEFAULT false,
+  picked_up BOOLEAN DEFAULT false
 );
