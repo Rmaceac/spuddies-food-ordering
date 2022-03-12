@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- STYLES -->
   <link rel="stylesheet" href="../styles/styles.css">
+
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script type="text/javascript" src="./scripts/current-order.js" defer></script>
+
   <title>Food App</title>
 </head>
 <body>
@@ -29,6 +37,7 @@
 <!-- ORDER CONTAINER -->
   <section class="order-container">
     <h2 class="order-title">CURRENT ORDER</h2>
+    <!-- <form> -->
     <table class="order-entries">
       <tr>
         <th>ITEM</th>
@@ -37,25 +46,26 @@
         <th></th>
       </tr>
       <tr>
-        <th>Potato Milkshake</th>
-        <th>x 1</th>
-        <th>$1.00</th>
-        <th><button>Remove</button></th>
+        <td>Potato Milkshake</td>
+        <td>x 1</td>
+        <td>$1.00</td>
+        <td><button class="remove-btn">Remove</button></td>
       </tr>
       <tr>
-        <th>Tater Tots</th>
-        <th>x 2</th>
-        <th>$4.00</th>
-        <th><button>Remove</button></th>
+        <td>Tater Tots</td>
+        <td>x 2</td>
+        <td>$4.00</td>
+        <td><button class="remove-btn">Remove</button></td>
       </tr>
       <tr>
-        <th>Mashed Puddin'</th>
-        <th>x 1</th>
-        <th>$2.50</th>
-        <th><button>Remove</button></th>
+        <td>Mashed Puddin'</td>
+        <td>x 1</td>
+        <td>$2.50</td>
+        <td><button class="remove-btn">Remove</button></td>
       </tr>
     </table>
     <button class="check-out">SUBMIT ORDER</button>
+  <!-- </form> -->
   </section>
 
 <!--  MENU HEADER -->
