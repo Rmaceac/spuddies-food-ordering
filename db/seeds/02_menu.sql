@@ -1,7 +1,0 @@
-INSERT INTO menu (item, type, price, description, thumbnail_url) VALUES ()
-INSERT INTO menu (item, type, price, description, thumbnail_url) VALUES ()
-INSERT INTO menu (item, type, price, description, thumbnail_url) VALUES ()
-INSERT INTO menu (item, type, price, description, thumbnail_url) VALUES ()
-INSERT INTO menu (item, type, price, description, thumbnail_url) VALUES ()
-INSERT INTO menu (item, type, price, description, thumbnail_url) VALUES ()
-INSERT INTO menu (item, type, price, description, thumbnail_url) VALUES ()
