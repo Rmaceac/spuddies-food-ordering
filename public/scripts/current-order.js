@@ -43,6 +43,7 @@ const handleItemRemoval = (removebtn) => {
 const renderOrder = (order) => {
   for (let item of order) {
     const newItem = addOrderItem(item);
+    //
     handleItemRemoval(newItem);
     $orderEntries.append(newItem);
   }
