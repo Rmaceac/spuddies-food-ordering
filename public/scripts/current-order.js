@@ -8,25 +8,24 @@ const dataOrder = [
     id: 1,
     name: 'Tot pop',
     quantity: 1,
-    price: 3.00
+    price: '3.00'
   },
   {
     id: 2,
     name: 'iced tea',
     quantity: 2,
-    price: 2.00
+    price: '2.00'
   },
   {
     id: 3,
     name: 'tater-shake',
     quantity: 3,
-    price: 6.00
+    price: '6.00'
   }
 ];
 
 
 const $orderEntries = $('.order-entries');
-const $removeBtn = $('.remove-btn');
 
 // REMOVE ORDER ITEM
 const addRemoveBtnListener = (removeBtn) => {
@@ -51,13 +50,13 @@ const renderOrder = (order) => {
   }
 };
 
-// CREATE NEW ORDER
+// CREATE NEW JQUERY ORDER OBJECT
 const addOrderItem = (object) => {
   const $orderItem = $(`
     <tr>
       <td>${object.name}</td>
       <td>x ${object.quantity}</td>
-      <td>$${convertToDollars(String(object.price))}</td>
+      <td>$${object.price}</td>
       <td><button class="remove-btn">Remove</button></td>
     </tr>
   `);
