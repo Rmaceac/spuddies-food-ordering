@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/layout.css">
+
   <title>Food App</title>
 </head>
 <body>
@@ -18,38 +21,70 @@
     <button>CONTACT US</button>
   </div>
 
-<!-- MAIN CONTAINER -->
-  <header class="header-container">
-    <div class="logo">LOGO</div>
+<!-- HEADER -->
+  <header class="header">
+    <img class="logo" src="https://via.placeholder.com/150" alt="">
+    <h1>RESTAURANT NAME</h1>
     <div class="current-user">Hello, Guest</div>
   </header>
 
-<!-- MAIN CONTAINER -->
+<!-- ORDER CONTAINER -->
   <section class="order-container">
-    <div class="order-title"></div>
-    <div class="order-entries"></div>
-    <button class="check-out"></button>
+    <h3 class="order-title">CURRENT ORDER</h3>
+    <table class="order-entries">
+      <tr>
+        <th>ITEM</th>
+        <th>QUANTITY</th>
+        <th>COST</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th>Potato Milkshake</th>
+        <th>x 1</th>
+        <th>$1.00</th>
+        <th><button>Remove</button></th>
+      </tr>
+      <tr>
+        <th>Tater Tots</th>
+        <th>x 2</th>
+        <th>$4.00</th>
+        <th><button>Remove</button></th>
+      </tr>
+      <tr>
+        <th>Mashed Puddin'</th>
+        <th>x 1</th>
+        <th>$2.50</th>
+        <th><button>Remove</button></th>
+      </tr>
+    </table>
+    <button class="check-out">SUBMIT ORDER</button>
   </section>
 
-<!-- MAIN CONTAINER -->
+<!--  MENU HEADER -->
   <section class="menu-container">
-    <div class="drinks">DRINKS</div>
-    <div class="burgers">BURGERS</div>
-    <div class="desserts">DESSERTs</div>
-    <div class="random">I CAN'T DECIDE!</div>
+    <h2>MENU</h2>
+    <article class="menu-header">
+      <div class="drinks"> DRINKS *</div>
+      <div class="burgers">* BURGERS *</div>
+      <div class="desserts">* DESSERTs *</div>
+      <div class="random">* I CAN'T DECIDE!</div>
+    </article>
+
+<!-- MENU CONTAINER -->
+    <article class="menu-items">
+      <div class="left-arrow"></div>
+      <img src="https://via.placeholder.com/150" alt="" class="burger-1">
+      <img src="https://via.placeholder.com/150" alt="" class="burger-2">
+      <img src="https://via.placeholder.com/150" alt="" class="burger-3">
+      <img src="https://via.placeholder.com/150" alt="" class="burger-3">
+    </article>
   </section>
 
-<!-- MAIN CONTAINER -->
-  <section class="menu-container">
-    <div class="left-arrow"></div>
-    <img src="" alt="" class="burger-1">
-    <img src="" alt="" class="burger-2">
-    <img src="" alt="" class="burger-3">
-  </section>
-  
-<!-- MAIN CONTAINER -->
+<!-- FOOTER -->
   <footer class="footer">
-
+    <div class="social">SOCIAL</div>
+    <div class="copyright">COPYRIGHT</div>
+    <div class="chat">CHAT</div>
   </footer>
 
 
