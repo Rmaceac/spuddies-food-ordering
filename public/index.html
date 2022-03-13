@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- STYLES -->
   <link rel="stylesheet" href="../styles/styles.css">
+
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script type="text/javascript" src="./scripts/current-order.js" defer></script>
+
   <title>Food App</title>
 </head>
 <body>
@@ -29,33 +37,24 @@
 <!-- ORDER CONTAINER -->
   <section class="order-container">
     <h2 class="order-title">CURRENT ORDER</h2>
-    <table class="order-entries">
-      <tr>
-        <th>ITEM</th>
-        <th>QUANTITY</th>
-        <th>COST</th>
-        <th></th>
-      </tr>
-      <tr>
-        <th>Potato Milkshake</th>
-        <th>x 1</th>
-        <th>$1.00</th>
-        <th><button>Remove</button></th>
-      </tr>
-      <tr>
-        <th>Tater Tots</th>
-        <th>x 2</th>
-        <th>$4.00</th>
-        <th><button>Remove</button></th>
-      </tr>
-      <tr>
-        <th>Mashed Puddin'</th>
-        <th>x 1</th>
-        <th>$2.50</th>
-        <th><button>Remove</button></th>
-      </tr>
+    <!-- <form> -->
+    <table>
+      <thead>
+        <tr>
+          <th>ITEM</th>
+          <th>QUANTITY</th>
+          <th>PRICE($/ITEM)</th>
+          <th>TOTAL/ITEM</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="order-entries">
+
+      </tbody>
+
     </table>
     <button class="check-out">SUBMIT ORDER</button>
+  <!-- </form> -->
   </section>
 
 <!--  MENU HEADER -->
@@ -71,10 +70,10 @@
 <!-- MENU CONTAINER -->
     <article class="menu-items">
       <div class="left-arrow"></div>
-      <img src="https://via.placeholder.com/150" alt="" class="burger-1">
-      <img src="https://via.placeholder.com/150" alt="" class="burger-2">
-      <img src="https://via.placeholder.com/150" alt="" class="burger-3">
-      <img src="https://via.placeholder.com/150" alt="" class="burger-3">
+      <img id='item-1' src="https://via.placeholder.com/150" alt="" class="burger">
+      <img id='item-2' src="https://via.placeholder.com/150" alt="" class="burger">
+      <img id='item-3' src="https://via.placeholder.com/150" alt="" class="burger">
+      <img id='item-4' src="https://via.placeholder.com/150" alt="" class="burger">
     </article>
   </section>
 
