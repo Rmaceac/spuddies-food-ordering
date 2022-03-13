@@ -1,5 +1,6 @@
-
+import {dataOrder} from './temp-data.js';
 import {menuArray} from './temp-data.js';
+import {renderOrder} from './current-order.js';
 $(() => {
 
 
@@ -10,6 +11,7 @@ $(() => {
     let $carouselRow;
     let $rowItems;
     for (const item of menuItems) {
+
       menuArray.push(item);
       currCount++;
       // console.log(`CurrCount: ${currCount} -- Item: ${item}`)
@@ -25,7 +27,7 @@ $(() => {
 
       const $renderedItem = renderItem(item);
       $rowItems.append($renderedItem);
-
+      addMenuItemListener($renderedItem);
       if (currCount % 3 === 0) {
         $('.carousel-inner').append($carouselRow);
       }
@@ -33,10 +35,29 @@ $(() => {
 
     }
 
+    //console.log(menuArray);
+
     // If items didn't fully fill a row, add the partial row
     if (currCount % 3 !== 0) {
       $('.carousel-inner').append($carouselRow);
     }
+  };
+
+  const $orderEntries = $('.order-entries');
+  let genID = 4;
+
+  const addMenuItemListener = (item) => {
+    item.on('click', (e) => {
+      console.log(item);
+      dataOrder.push({
+        id: genID++,
+        name: 'NEW ITEM',
+        quantity: 3,
+        price: 6.44
+      });
+      $orderEntries.empty();
+      renderOrder(dataOrder);
+    })
   };
 
   // CREATE NEW CAROUSEL ROW
@@ -54,7 +75,7 @@ $(() => {
   // CREATE SINGLE MENU ITEM
   const renderItem = (itemObj) => {
     const $menuItem = $(`
-    <img class="item" src="${itemObj.thumbnail_url}">
+    <img id=${itemObj.id} class="item" src="${itemObj.thumbnail_url}">
   `);
   return $menuItem;
   };
@@ -66,6 +87,7 @@ $(() => {
       dataType: "json"
     })
       .then((data) => {
+        // console.log(data);
         renderMenu(data);
       })
       .catch((err) => {

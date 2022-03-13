@@ -5,7 +5,7 @@ import {menuArray} from './temp-data.js';
 $(() => {
 
 
-
+console.log(menuArray);
 
 const $orderEntries = $('.order-entries');
 
@@ -59,19 +59,7 @@ const addOrderItem = (object) => {
 };
 
 
-  const $burger = $('.burger');
-  let genID = 4;
 
-  $burger.on('click', (e) => {
-    dataOrder.push({
-      id: genID++,
-      name: 'NEW ITEM',
-      quantity: 3,
-      price: 6.44
-    });
-    $orderEntries.empty();
-    renderOrder(dataOrder);
-  })
 
   // NOT USING YET - IMPLEMENT LATER
   // class Item {
@@ -92,5 +80,7 @@ const addOrderItem = (object) => {
   $('.carousel').carousel({
     interval: false
   });
+
+
 
 });
