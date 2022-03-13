@@ -1,13 +1,23 @@
 $(() => {
 
+  // Convert backend menu data to html
   const renderMenu = (menuItems) => {
     for (const item of menuItems) {
       console.log(item);
+      const renderedItem = renderMenuItem(item);
+      $('.menu-container').append(renderedItem);
     }
   };
 
-  const renderMenuItem = () => {
-
+  // Create individual menu-item
+  const renderMenuItem = (itemObj) => {
+    const $menuItem = $(`
+    <div>
+      <p>${itemObj.item}</p>
+      <img id="${itemObj.id}" src="${itemObj.thumbnail_url}">
+    </div>
+  `);
+  return $menuItem;
   };
   
   const loadItems = () => {
@@ -18,11 +28,7 @@ $(() => {
     })
       .then((data) => {
         console.log(data);
-        console.log(data[0])
-        console.log(data[1])
-//        let menuTest = JSON.parse(data);
- //       console.log(menuTest)
-        // renderMenu(JSON.parse(data));
+        renderMenu(data);
       })
       .catch((err) => {
         console.log("Error: ", err);
