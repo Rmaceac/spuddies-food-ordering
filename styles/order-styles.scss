@@ -1,0 +1,17 @@
+.minus .add {
+
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  width: 30px;
+  padding: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
