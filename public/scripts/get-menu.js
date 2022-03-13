@@ -50,7 +50,7 @@ $(() => {
   `);
   return $menuItem;
   };
-  
+
   const loadItems = () => {
     $.ajax({
       url: "http://localhost:8084/api/menu/",

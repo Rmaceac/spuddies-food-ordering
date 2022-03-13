@@ -13,12 +13,14 @@
 
   <!-- STYLES -->
   <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/order-styles.css">
 
   <!-- JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
 
   <!-- Current-order JS -->
   <script type="text/javascript" src="./scripts/current-order.js" defer></script>
+  <script type="text/javascript" src="./scripts/order-buttons.js" defer></script>
 
   <!-- Menu JS -->
   <script type="text/javascript" src="./scripts/get-menu.js" defer></script>
@@ -59,7 +61,13 @@
         </tr>
       </thead>
       <tbody class="order-entries">
-
+        <tr>
+          <td>Testing Potato</td>
+          <td><button class="minus">-</button><input type="text" id="1" value="1" min="1" max="9" /><button class="add">+</button></td>
+          <td>$4.00</td>
+          <td>$4.00</td>
+          <td><button id=${object.id} class="remove-btn">Remove</button></td>
+        </tr>
       </tbody>
 
     </table>
