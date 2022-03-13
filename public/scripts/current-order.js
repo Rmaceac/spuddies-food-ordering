@@ -106,4 +106,9 @@ const addOrderItem = (object) => {
   // const item = new Item(name, quantity, price, id);
 
 
+  // Carousel testing, will need to put in separate js file at some point
+  $('.carousel').carousel({
+    interval: false
+  });
+
 });
