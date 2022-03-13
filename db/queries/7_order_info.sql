@@ -1,6 +1,6 @@
 -- NEEDS WORK! THIS QUERY CREATES REDUNDANT DATA
 
-SELECT DISTINCT name as customer_name, email, phone, address, orders.id, order_time, sub_total, total_price, item, quantity
+SELECT name as customer_name, email, phone, address, orders.id, order_time, sub_total, total_price, item, quantity
 FROM orders
 JOIN users ON users.id = user_id
 JOIN order_items ON order_id = orders.id
