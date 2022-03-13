@@ -32,9 +32,7 @@ const addRemoveBtnListener = (removeBtn) => {
     removeBtn.on('click', (e => {
     e.preventDefault();
     const tempArr = dataOrder;
-    console.log(e.target.id);
     tempArr.forEach((item, index) => {
-      console.log(item.id);
       if(item.id == e.target.id) {
         dataOrder.splice(index, 1);
         console.log(dataOrder);
@@ -70,7 +68,7 @@ const addOrderItem = (object) => {
       <td>x ${object.quantity}</td>
       <td>$${object.price.toFixed(2)}</td>
       <td>$${(object.price * object.quantity).toFixed(2)}</td>
-      <td><button  id=${object.id} class="remove-btn">Remove</button></td>
+      <td><button id=${object.id} class="remove-btn">Remove</button></td>
     </tr>
   `);
   return $orderItem;
@@ -92,10 +90,11 @@ class Item {
 
 
   const $burger = $('.burger');
+  let genID = 4;
 
   $burger.on('click', (e) => {
     dataOrder.push({
-      id: 3,
+      id: genID++,
       name: 'NEW ITEM',
       quantity: 3,
       price: 6.44
