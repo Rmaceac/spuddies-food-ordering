@@ -12,11 +12,11 @@ const router  = express.Router();
 module.exports = (db) => {
   // Full route './api/menu/'
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM menu;`)
+    db.query(`SELECT * FROM menu_items;`)
       .then(data => {
         const menu = data.rows;
-        console.log(menu)
-        res.json({ menu });
+        console.log(menu);
+        res.json( menu );
       })
       .catch(err => {
         res

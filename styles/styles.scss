@@ -26,10 +26,11 @@ main {
   padding: 10px;
 }
 
+/* ORDER CSS */
+
 .order-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   padding: 25px;
   background-color: lightgreen;
 }
@@ -42,14 +43,15 @@ main {
   padding: 20px;
 }
 
-.order-entries > tbody > tr > td {
+.order-entries > tr > td, tr > th {
   text-align: center;
 }
+
+/* MENU CSS */
 
 .menu-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   padding: 20px;
   background-color: lightcyan;
 }
@@ -60,24 +62,43 @@ h2 {
 
 .menu-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0px 200px;
   padding-bottom: 20px;
+}
+
+h5 {
+  text-align: center;
 }
 
 .menu-items {
   display: flex;
   justify-content: space-evenly;
+  width: 90%;
+  margin: 0 auto;
 }
 
-img {
-  width: 150px;
-  height: 150px;
+.item {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  // flex: 1 1 100%;
 }
+
+.item > img {
+  width: 100%;
+}
+
+#next, #previous {
+  opacity: 2;
+  transform: scale(2);
+}
+
+/* Footer CSS */
 
 .footer {
   display: flex;
   justify-content: space-between;
   padding: 25px;
-  border: 1px solid black;
   background-color: lightblue;
 }
