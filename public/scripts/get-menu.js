@@ -18,8 +18,10 @@ $(() => {
     })
       .then((data) => {
         console.log(data);
-        let menuTest = JSON.parse(data);
-        console.log(menuTest)
+        console.log(data[0])
+        console.log(data[1])
+//        let menuTest = JSON.parse(data);
+ //       console.log(menuTest)
         // renderMenu(JSON.parse(data));
       })
       .catch((err) => {
