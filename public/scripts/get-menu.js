@@ -5,19 +5,48 @@ $(() => {
     let currCount = 0;
     for (const item of menuItems) {
       currCount++;
-      console.log(item);
-      const renderedItem = renderMenuItem(item);
-      $('.menu-container').append(renderedItem);
+      // console.log(`CurrCount: ${currCount} -- Item: ${item}`)
+
+      // Create new row for every overflow item
+      if (currCount % 3 === 1) {
+        // console.log(`RowNum: ${Math.ceil(currCount / 3)}`);
+        $carouselRow = renderRow(Math.ceil(currCount / 3));
+        console.log(`Carousel row: ${$carouselRow}`)
+        $rowItems = $carouselRow.find('.menu-items');
+        console.log(`Row items: ${$rowItems}`)
+      }
+
+      const $renderedItem = renderItem(item);
+      $rowItems.append($renderedItem);
+
+      if (currCount % 3 === 0) {
+        $('.carousel-inner').append($carouselRow);
+      }
+
+    }
+
+    // If items didn't fully fill a row, add the partial row
+    if (currCount % 3 !== 0) {
+      $('.carousel-inner').append($carouselRow);
     }
   };
 
-  // Create individual menu-item
-  const renderMenuItem = (itemObj) => {
-    const $menuItem = $(`
-    <div class="menuItem">
-      <p>${itemObj.item}</p>
-      <img id="${itemObj.id}" src="${itemObj.thumbnail_url}">
+  // CREATE NEW CAROUSEL ROW
+  const renderRow = (rowNum) => {
+    const activeStatus = rowNum === 1 ? "carousel-item active": "carousel-item";
+    return $(`
+    <div class="${activeStatus}" data-bs-interval="false">
+      <div class="menu-items">
+
+      </div>
     </div>
+    `)
+  };
+
+  // CREATE SINGLE MENU ITEM
+  const renderItem = (itemObj) => {
+    const $menuItem = $(`
+    <img class="item" src="${itemObj.thumbnail_url}">
   `);
   return $menuItem;
   };
