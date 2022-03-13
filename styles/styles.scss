@@ -26,6 +26,8 @@ main {
   padding: 10px;
 }
 
+/* ORDER CSS */
+
 .order-container {
   display: flex;
   flex-direction: column;
@@ -42,9 +44,11 @@ main {
   padding: 20px;
 }
 
-.order-entries > tbody > tr > td {
+.order-entries > tr > td, tr > th {
   text-align: center;
 }
+
+/* MENU CSS */
 
 .menu-container {
   display: flex;
@@ -67,7 +71,27 @@ h2 {
 .menu-items {
   display: flex;
   justify-content: space-evenly;
+  width: 90%;
+  margin: 0 auto;
 }
+
+.item {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  // flex: 1 1 100%;
+}
+
+.item > img {
+  width: 100%;
+}
+
+#next, #prev {
+  color: black;
+  opacity: 1;
+}
+
+/* Footer CSS */
 
 .footer {
   display: flex;

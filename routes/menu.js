@@ -16,7 +16,7 @@ module.exports = (db) => {
       .then(data => {
         const menu = data.rows;
         console.log(menu)
-        res.json({ menu });
+        res.json( menu );
       })
       .catch(err => {
         res
