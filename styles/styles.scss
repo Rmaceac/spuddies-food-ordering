@@ -79,10 +79,8 @@ h5 {
 }
 
 .item {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  // flex: 1 1 100%;
+  width: 33%;
+  flex: 1 1 100%;
 }
 
 .item > img {
