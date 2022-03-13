@@ -27,6 +27,8 @@ const dataOrder = [
 
 const $orderEntries = $('.order-entries');
 
+
+// orderObject not removing correctly - Take a look at soon
 // REMOVE ORDER ITEM
 const addRemoveBtnListener = (removeBtn) => {
     removeBtn.on('click', (e => {
@@ -34,7 +36,7 @@ const addRemoveBtnListener = (removeBtn) => {
     const tempArr = dataOrder;
     console.log(e.target.id);
     tempArr.forEach((item, index) => {
-      console.log(item.id);
+      // console.log(item.id);
       if(item.id == e.target.id) {
         dataOrder.splice(index, 1);
         console.log(dataOrder);
@@ -77,20 +79,6 @@ const addOrderItem = (object) => {
 };
 
 
-
-
-class Item {
-  constructor(name, quantity, price) {
-    this.name = name;
-    this.quantity = quantity;
-    this.price = price;
-    this.id = () => {
-      generateRandomID();
-    }
-  }
-};
-
-
   const $burger = $('.burger');
 
   $burger.on('click', (e) => {
@@ -104,10 +92,17 @@ class Item {
     renderOrder(dataOrder);
   })
 
-
-//
-  // const author = document.querySelector('#author').value;
-  // const pages = document.querySelector('#pages').value;
+  // NOT USING YET - IMPLEMENT LATER
+  // class Item {
+  //   constructor(name, quantity, price) {
+  //     this.name = name;
+  //     this.quantity = quantity;
+  //     this.price = price;
+  //     this.id = () => {
+  //       generateRandomID();
+  //     }
+  //   }
+  // };
 
   // const item = new Item(name, quantity, price, id);
 
