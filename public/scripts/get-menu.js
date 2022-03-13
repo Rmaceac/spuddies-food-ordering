@@ -2,7 +2,9 @@ $(() => {
 
   // Convert backend menu data to html
   const renderMenu = (menuItems) => {
+    let currCount = 0;
     for (const item of menuItems) {
+      currCount++;
       console.log(item);
       const renderedItem = renderMenuItem(item);
       $('.menu-container').append(renderedItem);
@@ -12,7 +14,7 @@ $(() => {
   // Create individual menu-item
   const renderMenuItem = (itemObj) => {
     const $menuItem = $(`
-    <div>
+    <div class="menuItem">
       <p>${itemObj.item}</p>
       <img id="${itemObj.id}" src="${itemObj.thumbnail_url}">
     </div>
