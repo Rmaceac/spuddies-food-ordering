@@ -1,9 +1,16 @@
+
+import {menuArray} from './temp-data.js';
 $(() => {
+
+
 
   // Convert backend menu data to html
   const renderMenu = (menuItems) => {
     let currCount = 0;
+    let $carouselRow;
+    let $rowItems;
     for (const item of menuItems) {
+      menuArray.push(item);
       currCount++;
       // console.log(`CurrCount: ${currCount} -- Item: ${item}`)
 
@@ -11,9 +18,9 @@ $(() => {
       if (currCount % 3 === 1) {
         // console.log(`RowNum: ${Math.ceil(currCount / 3)}`);
         $carouselRow = renderRow(Math.ceil(currCount / 3));
-        console.log(`Carousel row: ${$carouselRow}`)
+        // console.log(`Carousel row: ${$carouselRow}`)
         $rowItems = $carouselRow.find('.menu-items');
-        console.log(`Row items: ${$rowItems}`)
+        // console.log(`Row items: ${$rowItems}`)
       }
 
       const $renderedItem = renderItem(item);
@@ -22,6 +29,7 @@ $(() => {
       if (currCount % 3 === 0) {
         $('.carousel-inner').append($carouselRow);
       }
+
 
     }
 
@@ -58,7 +66,6 @@ $(() => {
       dataType: "json"
     })
       .then((data) => {
-        console.log(data);
         renderMenu(data);
       })
       .catch((err) => {
@@ -68,4 +75,7 @@ $(() => {
 
   loadItems();
 
+
+
 })
+
