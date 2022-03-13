@@ -1,0 +1,1 @@
+INSERT INTO orders (user_id, total_price) VALUES (2, 29);
