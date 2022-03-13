@@ -31,7 +31,6 @@ main {
 .order-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   padding: 25px;
   background-color: lightgreen;
 }
@@ -53,7 +52,6 @@ main {
 .menu-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   padding: 20px;
   background-color: lightcyan;
 }
@@ -64,8 +62,13 @@ h2 {
 
 .menu-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0px 200px;
   padding-bottom: 20px;
+}
+
+h5 {
+  text-align: center;
 }
 
 .menu-items {
@@ -86,9 +89,9 @@ h2 {
   width: 100%;
 }
 
-#next, #prev {
-  color: black;
-  opacity: 1;
+#next, #previous {
+  opacity: 2;
+  transform: scale(2);
 }
 
 /* Footer CSS */
@@ -97,6 +100,5 @@ h2 {
   display: flex;
   justify-content: space-between;
   padding: 25px;
-  border: 1px solid black;
   background-color: lightblue;
 }
