@@ -27,6 +27,8 @@ const dataOrder = [
 
 const $orderEntries = $('.order-entries');
 
+
+// orderObject not removing correctly - Take a look at soon
 // REMOVE ORDER ITEM
 const addRemoveBtnListener = (removeBtn) => {
     removeBtn.on('click', (e => {
@@ -75,20 +77,6 @@ const addOrderItem = (object) => {
 };
 
 
-
-
-class Item {
-  constructor(name, quantity, price) {
-    this.name = name;
-    this.quantity = quantity;
-    this.price = price;
-    this.id = () => {
-      generateRandomID();
-    }
-  }
-};
-
-
   const $burger = $('.burger');
   let genID = 4;
 
@@ -103,10 +91,17 @@ class Item {
     renderOrder(dataOrder);
   })
 
-
-//
-  // const author = document.querySelector('#author').value;
-  // const pages = document.querySelector('#pages').value;
+  // NOT USING YET - IMPLEMENT LATER
+  // class Item {
+  //   constructor(name, quantity, price) {
+  //     this.name = name;
+  //     this.quantity = quantity;
+  //     this.price = price;
+  //     this.id = () => {
+  //       generateRandomID();
+  //     }
+  //   }
+  // };
 
   // const item = new Item(name, quantity, price, id);
 
