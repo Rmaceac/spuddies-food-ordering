@@ -42,6 +42,10 @@ main {
   padding: 20px;
 }
 
+.order-entries > tbody > tr > td {
+  text-align: center;
+}
+
 .menu-container {
   display: flex;
   flex-direction: column;
