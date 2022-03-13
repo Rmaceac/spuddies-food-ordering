@@ -42,7 +42,7 @@ main {
   padding: 20px;
 }
 
-.order-entries > tbody > tr > td {
+.order-entries > tr > td, tr > th {
   text-align: center;
 }
 
