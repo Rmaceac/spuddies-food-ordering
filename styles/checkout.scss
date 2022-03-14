@@ -1,0 +1,33 @@
+.spinner {
+  font-size: 300%;
+  animation: spin-animation 1.0s 4000;
+}
+
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.check-out {
+  align-self: center;
+  width: 30%;
+}
+
+.received-container {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 500px;
+  height: 20px;
+  border: 2px solid black;
+  color: green;
+  
+}
