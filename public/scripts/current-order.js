@@ -5,6 +5,7 @@ import {menuArray} from './temp-data.js';
 $(() => {
 
   const $orderEntries = $('.order-entries');
+  const $orderTotal = $('#orderTotal');
 
 // REMOVE ORDER ITEM
 const addRemoveBtnListener = (removeBtn) => {
@@ -38,7 +39,7 @@ const addIncreaseQuantityListener = (plusBtn) => {
     for (const orderItem of dataOrder) {    
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
-        console.log(orderItem.quantity);
+        orderItem.subtotal = orderItem.price * orderItem.quantity;
       }
     }
     renderOrder(dataOrder);
@@ -52,15 +53,15 @@ const addDecreaseQuantityListener = (minusBtn) => {
     const prevQuantity = Number(e.target.parentElement.children[1].value) - 1;
     
     if(prevQuantity >=1) {
-    input.val(prevQuantity);
+      input.val(prevQuantity);
     }
-
+    
     const orderItemName = $(this).parent().parent()[0].id;
-
+    
     for (const orderItem of dataOrder) {    
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
-        console.log(orderItem.quantity);
+        orderItem.subtotal = orderItem.price * orderItem.quantity;
       }
     }
     renderOrder(dataOrder);
@@ -73,6 +74,7 @@ const renderOrder = (order) => {
   $orderEntries.empty();
 
   for (const item of order) {
+    totalCost += item.subtotal;
     // Create new jquery object newItem
     const newItem = addOrderItem(item);
 
@@ -87,6 +89,7 @@ const renderOrder = (order) => {
     addDecreaseQuantityListener(minusBtn);
     $orderEntries.append(newItem);
   }
+  $orderTotal.text(`$${totalCost.toFixed(2)}`)
 };
 
 
@@ -97,7 +100,7 @@ const addOrderItem = (object) => {
       <td>${object.name}</td>
       <td><button class="minus">-</button><input class='quantity' type="text" value="${object.quantity}" min="1" max="9" /><button class="add">+</button></td>
       <td>$${object.price}</td>
-      <td>$${(Number(object.price) * object.quantity).toFixed(2)}</td>
+      <td>$${(object.price * object.quantity).toFixed(2)}</td>
       <td><button id=${object.id} class="remove-btn">Remove</button></td>
     </tr>
   `);
@@ -152,8 +155,8 @@ const addMenuItemListener = (item, itemData) => {
       id: genID++,
       name: itemData.item,
       quantity: 1,
-      price: itemData.price,
-      subtotal: itemData.price
+      price: Number(itemData.price),
+      subtotal: Number(itemData.price)
     });
     $orderEntries.empty();
     renderOrder(dataOrder);
