@@ -29,9 +29,25 @@ $(() => {
       // ADD LOADING BAR
       $loadingBar = $('<i class="fa-solid fa-bars-progress progress-bar"></i>');
       $('.loading-bar').append($loadingBar);
+      // //SET TIMEOUT ON PROGRESS BAR
+      // $cooking = $('')
+      // setTimeout(cooking, 10000);
+      // function cooking() {
+      //   $loadingBar.replaceWith($packaging)
+      // }
+      // setTimeout(packaging, 15000);
+      // function packaging() {
+      //   $packaging.replaceWith($pickup)
+      // }
+      // setTimeout(pickup, 20000);
+      //   $pickup.replaceWith($complete)
+
     });
     }
   });
+
+
+
 
 
 
