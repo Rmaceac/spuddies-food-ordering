@@ -57,11 +57,10 @@ const renderOrder = (order) => {
     // Create new jquery object newItem
     const newItem = addOrderItem(item);
 
-    // Retrieve the button element
+    // Retrieve the button elements
     const removeBtn = newItem.find('.remove-btn');
     const plusBtn = newItem.find('.add');
     const minusBtn = newItem.find('.minus');
-    // console.log('PLUSBTN', plusBtn);
 
     // Add event listener to remove button
     addRemoveBtnListener(removeBtn);
@@ -78,8 +77,8 @@ const addOrderItem = (object) => {
     <tr>
       <td>${object.name}</td>
       <td><button class="minus">-</button><input class='quantity' type="text" value="1" min="1" max="9" /><button class="add">+</button></td>
-      <td>$${object.price.toFixed(2)}</td>
-      <td>$${(object.price * object.quantity).toFixed(2)}</td>
+      <td>${object.price}</td>
+      <td>${(Number(object.price.slice(1)) * object.quantity)}</td>
       <td><button id=${object.id} class="remove-btn">Remove</button></td>
     </tr>
   `);
@@ -109,7 +108,7 @@ const renderMenu = (menuItems) => {
 
     const $renderedItem = renderItem(item);
     $rowItems.append($renderedItem);
-    addMenuItemListener($renderedItem);
+    addMenuItemListener($renderedItem, item);
     if (currCount % 3 === 0) {
       $('.carousel-inner').append($carouselRow);
     }
@@ -128,18 +127,17 @@ const renderMenu = (menuItems) => {
 
 let genID = 4;
 
-const addMenuItemListener = (item) => {
-  item.on('click', (e) => {
-    console.log(item);
+const addMenuItemListener = (item, itemData) => {
+  item.on('click', function(e) {
+    console.log(`Price: ${itemData.price} -- Type: ${typeof itemData.price}`)
     dataOrder.push({
       id: genID++,
-      name: 'NEW ITEM',
-      quantity: 3,
-      price: 6.44
+      name: itemData.item,
+      quantity: 1,
+      price: itemData.price
     });
     $orderEntries.empty();
     renderOrder(dataOrder);
-
   })
 };
 
@@ -170,7 +168,6 @@ const loadItems = () => {
     dataType: "json"
   })
     .then((data) => {
-      // console.log(data);
       renderMenu(data);
     })
     .catch((err) => {
