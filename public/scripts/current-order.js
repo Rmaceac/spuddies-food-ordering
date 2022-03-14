@@ -16,11 +16,13 @@ const addRemoveBtnListener = (removeBtn) => {
       if(item.id == e.target.id) {
         dataOrder.splice(index, 1);
         console.log(dataOrder);
+        renderOrder(dataOrder);
       }
     });
 
-    const tr = e.target.parentElement.parentElement;
-    tr.remove();
+    
+    // const tr = e.target.parentElement.parentElement;
+    // tr.remove();
   }));
 }
 
@@ -151,21 +153,27 @@ let genID = 4;
 
 const addMenuItemListener = (item, itemData) => {
   item.on('click', function(e) {
-    const checkIfExists = false;
-    for (const orderItem in dataOrder) {
-      if (orderItem.name = itemData.name) {
-
+    let checkIfExists = false;
+    // Check if item already in orders table
+    for (const orderItem of dataOrder) {
+      console.log(`OrderItem: ${orderItem.name} -- itemData: ${itemData.item}`)
+      if (orderItem.name === itemData.item) {
+        checkIfExists = true;
       }
     }
-    dataOrder.push({
-      id: genID++,
-      name: itemData.item,
-      quantity: 1,
-      price: Number(itemData.price),
-      subtotal: Number(itemData.price)
-    });
-    $orderEntries.empty();
-    renderOrder(dataOrder);
+    console.log(checkIfExists)
+    // If item not in dataOrder, add it
+    if (!checkIfExists) {
+      dataOrder.push({
+        id: genID++,
+        name: itemData.item,
+        quantity: 1,
+        price: Number(itemData.price),
+        subtotal: Number(itemData.price)
+      });
+      $orderEntries.empty();
+      renderOrder(dataOrder);
+    }
   })
 };
 
