@@ -15,14 +15,9 @@ const addRemoveBtnListener = (removeBtn) => {
     tempArr.forEach((item, index) => {
       if(item.id == e.target.id) {
         dataOrder.splice(index, 1);
-        console.log(dataOrder);
         renderOrder(dataOrder);
       }
     });
-
-    
-    // const tr = e.target.parentElement.parentElement;
-    // tr.remove();
   }));
 }
 
@@ -156,12 +151,10 @@ const addMenuItemListener = (item, itemData) => {
     let checkIfExists = false;
     // Check if item already in orders table
     for (const orderItem of dataOrder) {
-      console.log(`OrderItem: ${orderItem.name} -- itemData: ${itemData.item}`)
       if (orderItem.name === itemData.item) {
         checkIfExists = true;
       }
     }
-    console.log(checkIfExists)
     // If item not in dataOrder, add it
     if (!checkIfExists) {
       dataOrder.push({
@@ -232,7 +225,5 @@ loadItems();
   $('.carousel').carousel({
     interval: false
   });
-
-
 
 });
