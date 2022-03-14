@@ -151,6 +151,12 @@ let genID = 4;
 
 const addMenuItemListener = (item, itemData) => {
   item.on('click', function(e) {
+    const checkIfExists = false;
+    for (const orderItem in dataOrder) {
+      if (orderItem.name = itemData.name) {
+
+      }
+    }
     dataOrder.push({
       id: genID++,
       name: itemData.item,
