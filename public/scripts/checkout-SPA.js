@@ -1,9 +1,6 @@
 $(() => {
 
   const $submit = $('.check-out')
-  const $add = $('.add')
-  const $minus = $('.minus')
-  const $remove = $('.remove-btn')
 
   $submit.on('click', (e) =>  {
     console.log(e);
@@ -21,10 +18,12 @@ $(() => {
       $submit.replaceWith(checkout);
 
       // REMOVE CURRENT ORDER BUTTONS & STOP SPINNER
+      const $add = $('.add')
+      const $minus = $('.minus')
+      const $remove = $('.remove-btn')
       $add.hide();
       $minus.hide();
       $remove.hide();
-      $potato.hide();
 
       // ADD LOADING BAR
       $loadingBar = $('<i class="fa-solid fa-bars-progress progress-bar"></i>');
