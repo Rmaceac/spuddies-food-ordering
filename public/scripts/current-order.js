@@ -1,7 +1,6 @@
 import {dataOrder} from './temp-data.js';
 import {menuArray} from './temp-data.js';
-// import {increaseQuantity} from './order-buttons';
-// import {decreaseQuantity} from './order-buttons';
+
 
 $(() => {
 
