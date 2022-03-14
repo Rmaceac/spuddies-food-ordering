@@ -1,3 +1,18 @@
 .spinner {
-  color: green;
+  font-size: 300%;
+  animation: spin-animation 1.0s 4000;
+}
+
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.check-out {
+  align-self: center;
+  width: 30%;
 }
