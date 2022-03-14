@@ -5,6 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+ <!-- Font Awesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Link bootstrap stylesheet -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -14,6 +17,7 @@
   <!-- STYLES -->
   <link rel="stylesheet" href="../styles/styles.css">
   <link rel="stylesheet" href="../styles/order-styles.css">
+  <link rel="stylesheet" href="./styles/menu-styles.css">
 
   <!-- JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
@@ -113,12 +117,12 @@
 
         <button class="carousel-control-prev" type="button" id="previous" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <div>
-            <span class="carousel-control-prev-icon margAuto" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon margAuto arrow" aria-hidden="true"></span>
           </div>
         </button>
         <button class="carousel-control-next"  type="button" id="next" data-bs-target="#carouselExampleControls" data-bs-slide="next">
           <div>
-            <span class="carousel-control-next-icon margAuto" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon margAuto arrow" aria-hidden="true"></span>
           </div>
         </button>
       </div>
@@ -126,9 +130,14 @@
 
 <!-- FOOTER -->
   <footer class="footer">
-    <div class="social">SOCIAL</div>
-    <div class="copyright">COPYRIGHT</div>
-    <div class="chat">CHAT</div>
+    <div>
+      <i class="fa-brands fa-twitter-square social"></i>
+      <i class="fa-brands fa-instagram social"></i>
+      <i class="fa-brands fa-facebook social"></i>
+    </div>
+    <div class="copyright"><footer>&copy;TaterGang 2022</footer>
+    </div>
+    <div class="chat"><i class="fa-solid fa-comment-dots"></i></div>
   </footer>
 
 </main>

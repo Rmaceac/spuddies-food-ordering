@@ -1,0 +1,22 @@
+.item:hover {
+  transform: scale(1);
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.item {
+  transform: scale(.8);
+  transition-duration: 0.4s;
+  border-radius: 10px;
+}
+
+.chat {
+  transform: scale(3.0);
+}
+
+.social {
+  transform: scale(1.5);
+  padding: 4px;
+}
+
