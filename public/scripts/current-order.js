@@ -8,8 +8,6 @@ console.log(menuArray);
 
   const $orderEntries = $('.order-entries');
 
-
-// orderObject not removing correctly - Take a look at soon
 // REMOVE ORDER ITEM
 const addRemoveBtnListener = (removeBtn) => {
     removeBtn.on('click', (e => {
@@ -31,8 +29,10 @@ const addIncreaseQuantityListener = (plusBtn) => {
   plusBtn.on('click', function(e) {
     const input = $(this).siblings('.quantity');
 
+    console.log($(this).parent().parent());
+
     const prevQuantity = Number(e.target.parentElement.children[1].value) + 1;
-    if(prevQuantity <= 9){
+    if (prevQuantity <= 9) {
       input.val(prevQuantity);
     }
 
@@ -73,7 +73,7 @@ const renderOrder = (order) => {
 // CREATE NEW JQUERY ORDER OBJECT
 const addOrderItem = (object) => {
   const $orderItem = $(`
-    <tr>
+    <tr id="${object.name}">
       <td>${object.name}</td>
       <td><button class="minus">-</button><input class='quantity' type="text" value="1" min="1" max="9" /><button class="add">+</button></td>
       <td>${object.price}</td>

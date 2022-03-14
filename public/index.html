@@ -24,8 +24,8 @@
 
   <!-- Current-order JS -->
   <script type="module" src="./scripts/current-order.js" defer></script>
-  <script type="module" src="./scripts/order-buttons.js" defer></script>
   <script src="./scripts/storage.js" defer></script>
+
 
   <title>Food App</title>
 </head>
@@ -51,30 +51,30 @@
 <!-- ORDER CONTAINER -->
   <section class="order-container">
     <h2 class="order-title">CURRENT ORDER</h2>
-    <!-- <form> -->
-    <table>
-      <thead>
-        <tr>
-          <th>ITEM</th>
-          <th>QUANTITY</th>
-          <th>PRICE($/ITEM)</th>
-          <th>TOTAL/ITEM</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody class="order-entries">
-        <tr>
-          <td>Testing Potato</td>
-          <td><button class="minus">-</button><input class='quantity' type="text" id="420" value="1" min="1" max="9" /><button class="add">+</button></td>
-          <td>$4.00</td>
-          <td>$4.00</td>
-          <td><button id=${object.id} class="remove-btn">Remove</button></td>
-        </tr>
-      </tbody>
+      <form method='POST' action="/api/checkout" >
+        <table>
+          <thead>
+            <tr>
+              <th>ITEM</th>
+              <th>QUANTITY</th>
+              <th>PRICE($/ITEM)</th>
+              <th>TOTAL/ITEM</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="order-entries">
+            <tr>
+              <td>Testing Potato</td>
+              <td><button class="minus">-</button><input class='quantity' type="text" id="420" value="1" min="1" max="9" /><button class="add">+</button></td>
+              <td>$4.00</td>
+              <td>$4.00</td>
+              <td><button id=${object.id} class="remove-btn">Remove</button></td>
+            </tr>
+          </tbody>
 
-    </table>
-    <button class="check-out">SUBMIT ORDER</button>
-  <!-- </form> -->
+        </table>
+        <button type="submit" class="check-out">SUBMIT ORDER</button>
+    </form>
   </section>
 
 <!--  MENU HEADER -->
