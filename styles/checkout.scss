@@ -16,3 +16,10 @@
   align-self: center;
   width: 30%;
 }
+
+.received-container {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+}
