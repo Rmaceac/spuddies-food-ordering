@@ -31,8 +31,12 @@ const addRemoveBtnListener = (removeBtn) => {
 const addIncreaseQuantityListener = (plusBtn) => {
   plusBtn.on('click', function(e) {
     const input = $(this).siblings('.quantity');
+
     const prevQuantity = Number(e.target.parentElement.children[1].value) + 1;
-    input.val(prevQuantity);
+    if(prevQuantity <= 9){
+      input.val(prevQuantity);
+    }
+
   });
 };
 
@@ -40,7 +44,9 @@ const addDecreaseQuantityListener = (minusBtn) => {
   minusBtn.on('click', function(e) {
     const input = $(this).siblings('.quantity');
     const prevQuantity = Number(e.target.parentElement.children[1].value) - 1;
+    if(prevQuantity >=1) {
     input.val(prevQuantity);
+    }
   });
 };
 
@@ -59,8 +65,8 @@ const renderOrder = (order) => {
 
     // Add event listener to remove button
     addRemoveBtnListener(removeBtn);
-    addIncreaseQuantityListener(plusBtn)
-    addDecreaseQuantityListener(minusBtn)
+    addIncreaseQuantityListener(plusBtn);
+    addDecreaseQuantityListener(minusBtn);
     $orderEntries.append(newItem);
   }
 };
