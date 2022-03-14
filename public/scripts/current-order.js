@@ -29,12 +29,28 @@ const addIncreaseQuantityListener = (plusBtn) => {
   plusBtn.on('click', function(e) {
     const input = $(this).siblings('.quantity');
 
-    console.log($(this).parent().parent());
+    // console.log($(this).parent().parent()[0].id);
+    const orderItemName = $(this).parent().parent()[0].id;
+
+    
+
 
     const prevQuantity = Number(e.target.parentElement.children[1].value) + 1;
+
+    
+
     if (prevQuantity <= 9) {
       input.val(prevQuantity);
     }
+
+    for (const orderItem of dataOrder) {    
+      if (orderItem.name === orderItemName) {
+        orderItem.quantity = Number(e.target.parentElement.children[1].value);
+        console.log(orderItem.quantity);
+      }
+    }
+    renderOrder(dataOrder);
+    
 
   });
 };
@@ -51,6 +67,8 @@ const addDecreaseQuantityListener = (minusBtn) => {
 
 const renderOrder = (order) => {
   let totalCost = 0;
+
+  $orderEntries.empty();
 
   for (const item of order) {
     // Create new jquery object newItem
@@ -75,9 +93,9 @@ const addOrderItem = (object) => {
   const $orderItem = $(`
     <tr id="${object.name}">
       <td>${object.name}</td>
-      <td><button class="minus">-</button><input class='quantity' type="text" value="1" min="1" max="9" /><button class="add">+</button></td>
+      <td><button class="minus">-</button><input class='quantity' type="text" value="${object.quantity}" min="1" max="9" /><button class="add">+</button></td>
       <td>${object.price}</td>
-      <td>${(Number(object.price.slice(1)) * object.quantity)}</td>
+      <td>$${(Number(object.price.slice(1)) * object.quantity).toFixed(2)}</td>
       <td><button id=${object.id} class="remove-btn">Remove</button></td>
     </tr>
   `);
