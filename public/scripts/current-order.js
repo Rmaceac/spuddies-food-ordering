@@ -77,8 +77,8 @@ const addOrderItem = (object) => {
     <tr>
       <td>${object.name}</td>
       <td><button class="minus">-</button><input class='quantity' type="text" value="1" min="1" max="9" /><button class="add">+</button></td>
-      <td>$${object.price}</td>
-      <td>$${(object.price * object.quantity)}</td>
+      <td>${object.price}</td>
+      <td>${(object.price * object.quantity)}</td>
       <td><button id=${object.id} class="remove-btn">Remove</button></td>
     </tr>
   `);
@@ -129,17 +129,14 @@ let genID = 4;
 
 const addMenuItemListener = (item, itemData) => {
   item.on('click', function(e) {
-    console.log($(this)[0].id)
-    
     dataOrder.push({
-      id: itemData.id,
-      name: itemData.name,
+      id: genID++,
+      name: itemData.item,
       quantity: 1,
       price: itemData.price
     });
     $orderEntries.empty();
     renderOrder(dataOrder);
-
   })
 };
 
