@@ -8,8 +8,6 @@ console.log(menuArray);
 
   const $orderEntries = $('.order-entries');
 
-
-// orderObject not removing correctly - Take a look at soon
 // REMOVE ORDER ITEM
 const addRemoveBtnListener = (removeBtn) => {
     removeBtn.on('click', (e => {
