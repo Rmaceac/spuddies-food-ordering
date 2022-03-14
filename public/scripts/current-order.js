@@ -1,5 +1,7 @@
 import {dataOrder} from './temp-data.js';
 import {menuArray} from './temp-data.js';
+// import {increaseQuantity} from './order-buttons';
+// import {decreaseQuantity} from './order-buttons';
 
 $(() => {
 
@@ -26,6 +28,28 @@ const addRemoveBtnListener = (removeBtn) => {
   }));
 }
 
+const addIncreaseQuantityListener = (plusBtn) => {
+  plusBtn.on('click', function(e) {
+    const input = $(this).siblings('.quantity');
+
+    const prevQuantity = Number(e.target.parentElement.children[1].value) + 1;
+    if(prevQuantity <= 9){
+      input.val(prevQuantity);
+    }
+
+  });
+};
+
+const addDecreaseQuantityListener = (minusBtn) => {
+  minusBtn.on('click', function(e) {
+    const input = $(this).siblings('.quantity');
+    const prevQuantity = Number(e.target.parentElement.children[1].value) - 1;
+    if(prevQuantity >=1) {
+    input.val(prevQuantity);
+    }
+  });
+};
+
 const renderOrder = (order) => {
   let totalCost = 0;
 
@@ -35,19 +59,25 @@ const renderOrder = (order) => {
 
     // Retrieve the button element
     const removeBtn = newItem.find('.remove-btn');
+    const plusBtn = newItem.find('.add');
+    const minusBtn = newItem.find('.minus');
+    // console.log('PLUSBTN', plusBtn);
 
     // Add event listener to remove button
     addRemoveBtnListener(removeBtn);
+    addIncreaseQuantityListener(plusBtn);
+    addDecreaseQuantityListener(minusBtn);
     $orderEntries.append(newItem);
   }
 };
+
 
 // CREATE NEW JQUERY ORDER OBJECT
 const addOrderItem = (object) => {
   const $orderItem = $(`
     <tr>
       <td>${object.name}</td>
-      <td><button class="minus">-</button>x ${object.quantity}<button class="add">+</button></td>
+      <td><button class="minus">-</button><input class='quantity' type="text" value="1" min="1" max="9" /><button class="add">+</button></td>
       <td>$${object.price.toFixed(2)}</td>
       <td>$${(object.price * object.quantity).toFixed(2)}</td>
       <td><button id=${object.id} class="remove-btn">Remove</button></td>
