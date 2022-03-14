@@ -170,7 +170,6 @@ const loadItems = () => {
     dataType: "json"
   })
     .then((data) => {
-      // console.log(data);
       renderMenu(data);
     })
     .catch((err) => {
