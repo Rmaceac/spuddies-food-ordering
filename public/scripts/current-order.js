@@ -78,7 +78,7 @@ const addOrderItem = (object) => {
       <td>${object.name}</td>
       <td><button class="minus">-</button><input class='quantity' type="text" value="1" min="1" max="9" /><button class="add">+</button></td>
       <td>${object.price}</td>
-      <td>${(object.price * object.quantity)}</td>
+      <td>${(Number(object.price.slice(1)) * object.quantity)}</td>
       <td><button id=${object.id} class="remove-btn">Remove</button></td>
     </tr>
   `);
@@ -129,6 +129,7 @@ let genID = 4;
 
 const addMenuItemListener = (item, itemData) => {
   item.on('click', function(e) {
+    console.log(`Price: ${itemData.price} -- Type: ${typeof itemData.price}`)
     dataOrder.push({
       id: genID++,
       name: itemData.item,
