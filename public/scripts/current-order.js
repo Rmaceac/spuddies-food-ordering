@@ -4,8 +4,6 @@ import {menuArray} from './temp-data.js';
 
 $(() => {
 
-console.log(menuArray);
-
   const $orderEntries = $('.order-entries');
 
 // REMOVE ORDER ITEM
@@ -146,7 +144,6 @@ let genID = 4;
 
 const addMenuItemListener = (item, itemData) => {
   item.on('click', function(e) {
-    console.log(`Price: ${itemData.price} -- Type: ${typeof itemData.price}`)
     dataOrder.push({
       id: genID++,
       name: itemData.item,
