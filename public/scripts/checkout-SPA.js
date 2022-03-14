@@ -8,7 +8,7 @@ $(() => {
   $submit.on('click', (e) =>  {
     console.log(e);
     //SET TIMEOUT & ADD SPINNER
-    setTimeout(checkout, 1000);
+    setTimeout(checkout, 3000);
     $potato = $('<p class="spinner">🥔</p>')
     $prepareOrder = $('<p>Preparing your order...</p>')
     $('.check-out').text('');
@@ -27,8 +27,7 @@ $(() => {
       $potato.hide();
 
       // ADD LOADING BAR
-      $loadingBar = $('<i class="fa-solid fa-bars-progress"></i>');
-      console.log($('loading-bar'))
+      $loadingBar = $('<i class="fa-solid fa-bars-progress progress-bar"></i>');
       $('.loading-bar').append($loadingBar);
     });
     }
