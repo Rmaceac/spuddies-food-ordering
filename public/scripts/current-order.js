@@ -3,11 +3,9 @@ import {menuArray} from './temp-data.js';
 
 $(() => {
 
-
-
 console.log(menuArray);
 
-const $orderEntries = $('.order-entries');
+  const $orderEntries = $('.order-entries');
 
 
 // orderObject not removing correctly - Take a look at soon
@@ -111,6 +109,7 @@ const addMenuItemListener = (item) => {
     });
     $orderEntries.empty();
     renderOrder(dataOrder);
+
   })
 };
 
@@ -150,9 +149,6 @@ const loadItems = () => {
 };
 
 loadItems();
-
-
-
 
   // NOT USING YET - IMPLEMENT LATER
   // class Item {
