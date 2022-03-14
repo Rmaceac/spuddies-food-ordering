@@ -4,5 +4,5 @@ CREATE TABLE order_items (
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
   menu_items_id INTEGER REFERENCES menu_items(id) ON DELETE CASCADE,
   quantity INTEGER NOT NULL,
-  sub_total MONEY NOT NULL
+  sub_total DECIMAL NOT NULL
 );
