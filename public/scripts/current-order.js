@@ -164,12 +164,13 @@ const addMenuItemListener = (item, itemData) => {
 };
 
 // FILTER MENU BY BUTTON
-const menuButtons = $('.menu-header').children();
+const menuButtons = $('.menu-header').children('input');
+console.log(menuButtons)
 jQuery.each(menuButtons, (index, button) => {
-  $(`#${button.id}`).on("click", (e) => {
-    const filter = e.target.id;
-    renderMenu(menuArray, filter);
-  })
+  // $(`#${button.id}`).on("click", (e) => {
+  //   const filter = e.target.id;
+  //   renderMenu(menuArray, filter);
+  // })
 })
 
 // CREATE NEW CAROUSEL ROW
