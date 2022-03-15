@@ -199,21 +199,6 @@ const loadItems = () => {
 
 loadItems();
 
-  // NOT USING YET - IMPLEMENT LATER
-  // class Item {
-  //   constructor(name, quantity, price) {
-  //     this.name = name;
-  //     this.quantity = quantity;
-  //     this.price = price;
-  //     this.id = () => {
-  //       generateRandomID();
-  //     }
-  //   }
-  // };
-
-  // const item = new Item(name, quantity, price, id);
-
-
   // Carousel testing, will need to put in separate js file at some point
   $('.carousel').carousel({
     interval: false
