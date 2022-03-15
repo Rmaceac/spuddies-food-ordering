@@ -33,14 +33,14 @@ const addIncreaseQuantityListener = (plusBtn) => {
       input.val(prevQuantity);
     }
 
-    for (const orderItem of dataOrder) {    
+    for (const orderItem of dataOrder) {
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
         orderItem.subtotal = orderItem.price * orderItem.quantity;
       }
     }
     renderOrder(dataOrder);
-    
+
   });
 };
 
@@ -48,14 +48,14 @@ const addDecreaseQuantityListener = (minusBtn) => {
   minusBtn.on('click', function(e) {
     const input = $(this).siblings('.quantity');
     const prevQuantity = Number(e.target.parentElement.children[1].value) - 1;
-    
+
     if(prevQuantity >=1) {
       input.val(prevQuantity);
     }
-    
+
     const orderItemName = $(this).parent().parent()[0].id;
-    
-    for (const orderItem of dataOrder) {    
+
+    for (const orderItem of dataOrder) {
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
         orderItem.subtotal = orderItem.price * orderItem.quantity;
@@ -105,30 +105,30 @@ const addOrderItem = (object) => {
 };
 
 // Convert backend menu data to html
-const renderMenu = (menuItems) => {
+const renderMenu = (menuItems, filter) => {
   let currCount = 0;
   let $carouselRow;
   let $rowItems;
+  $('.carousel-inner').empty();
   for (const item of menuItems) {
+    // console.log(`item.type: ${item.type} - typeof: ${typeof item.type} -- filter: ${filter} - typeof: ${typeof filter}`)
+    if (item.type === filter) {
+      currCount++;
+      // Create new row for every overflow item
+      if (currCount % 3 === 1) {
+        $carouselRow = renderRow(Math.ceil(currCount / 3));
+        $rowItems = $carouselRow.find('.menu-items');
+      }
 
-    menuArray.push(item);
-    currCount++;
-
-    // Create new row for every overflow item
-    if (currCount % 3 === 1) {
-      $carouselRow = renderRow(Math.ceil(currCount / 3));
-      $rowItems = $carouselRow.find('.menu-items');
+      const $renderedItem = renderItem(item);
+      $rowItems.append($renderedItem);
+      addMenuItemListener($renderedItem, item);
+      if (currCount % 3 === 0) {
+        $('.carousel-inner').append($carouselRow);
+      }
     }
-
-    const $renderedItem = renderItem(item);
-    $rowItems.append($renderedItem);
-    addMenuItemListener($renderedItem, item);
-    if (currCount % 3 === 0) {
-      $('.carousel-inner').append($carouselRow);
-    }
+    
   }
-
-  //console.log(menuArray);
 
   // If items didn't fully fill a row, add the partial row
   if (currCount % 3 !== 0) {
@@ -163,6 +163,16 @@ const addMenuItemListener = (item, itemData) => {
   })
 };
 
+// FILTER MENU BY BUTTON
+const menuButtons = $('.menu-header').children('input');
+console.log(menuButtons)
+jQuery.each(menuButtons, (index, button) => {
+  $(`#${button.id}`).on("click", (e) => {
+    const filter = e.target.labels[0].id;
+    renderMenu(menuArray, filter);
+  })
+})
+
 // CREATE NEW CAROUSEL ROW
 const renderRow = (rowNum) => {
   const activeStatus = rowNum === 1 ? "carousel-item active": "carousel-item";
@@ -178,7 +188,18 @@ const renderRow = (rowNum) => {
 // CREATE SINGLE MENU ITEM
 const renderItem = (itemObj) => {
   const $menuItem = $(`
-  <img id=${itemObj.id} class="item" src="${itemObj.thumbnail_url}">
+  <div class="flip-box">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">
+        <img id=${itemObj.id} class="item" src="${itemObj.thumbnail_url}">
+      </div>
+      <div class="flip-box-back">
+        <h3>${itemObj.item}</h2>
+        <p>${itemObj.description}</p>
+        <h3>${itemObj.price}</h3>
+      </div>
+    </div>
+  </div>
 `);
 return $menuItem;
 };
@@ -190,7 +211,12 @@ const loadItems = () => {
     dataType: "json"
   })
     .then((data) => {
-      renderMenu(data);
+      for (const item of data) {
+        for (let i = 0; i < 3; i++) {
+          menuArray.push(item);
+        }
+      }
+      renderMenu(menuArray, 'burger');
     })
     .catch((err) => {
       console.log("Error: ", err);
@@ -198,21 +224,6 @@ const loadItems = () => {
 };
 
 loadItems();
-
-  // NOT USING YET - IMPLEMENT LATER
-  // class Item {
-  //   constructor(name, quantity, price) {
-  //     this.name = name;
-  //     this.quantity = quantity;
-  //     this.price = price;
-  //     this.id = () => {
-  //       generateRandomID();
-  //     }
-  //   }
-  // };
-
-  // const item = new Item(name, quantity, price, id);
-
 
   // Carousel testing, will need to put in separate js file at some point
   $('.carousel').carousel({
