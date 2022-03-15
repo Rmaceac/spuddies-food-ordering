@@ -33,14 +33,14 @@ const addIncreaseQuantityListener = (plusBtn) => {
       input.val(prevQuantity);
     }
 
-    for (const orderItem of dataOrder) {    
+    for (const orderItem of dataOrder) {
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
         orderItem.subtotal = orderItem.price * orderItem.quantity;
       }
     }
     renderOrder(dataOrder);
-    
+
   });
 };
 
@@ -48,14 +48,14 @@ const addDecreaseQuantityListener = (minusBtn) => {
   minusBtn.on('click', function(e) {
     const input = $(this).siblings('.quantity');
     const prevQuantity = Number(e.target.parentElement.children[1].value) - 1;
-    
+
     if(prevQuantity >=1) {
       input.val(prevQuantity);
     }
-    
+
     const orderItemName = $(this).parent().parent()[0].id;
-    
-    for (const orderItem of dataOrder) {    
+
+    for (const orderItem of dataOrder) {
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
         orderItem.subtotal = orderItem.price * orderItem.quantity;
@@ -163,6 +163,8 @@ const addMenuItemListener = (item, itemData) => {
   })
 };
 
+
+
 // CREATE NEW CAROUSEL ROW
 const renderRow = (rowNum) => {
   const activeStatus = rowNum === 1 ? "carousel-item active": "carousel-item";
@@ -178,7 +180,18 @@ const renderRow = (rowNum) => {
 // CREATE SINGLE MENU ITEM
 const renderItem = (itemObj) => {
   const $menuItem = $(`
-  <img id=${itemObj.id} class="item" src="${itemObj.thumbnail_url}">
+  <div class="flip-box">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">
+        <img id=${itemObj.id} class="item" src="${itemObj.thumbnail_url}">
+      </div>
+      <div class="flip-box-back">
+        <h3>${itemObj.item}</h2>
+        <p>${itemObj.description}</p>
+        <h3>${itemObj.price}</h3>
+      </div>
+    </div>
+  </div>
 `);
 return $menuItem;
 };
@@ -198,21 +211,6 @@ const loadItems = () => {
 };
 
 loadItems();
-
-  // NOT USING YET - IMPLEMENT LATER
-  // class Item {
-  //   constructor(name, quantity, price) {
-  //     this.name = name;
-  //     this.quantity = quantity;
-  //     this.price = price;
-  //     this.id = () => {
-  //       generateRandomID();
-  //     }
-  //   }
-  // };
-
-  // const item = new Item(name, quantity, price, id);
-
 
   // Carousel testing, will need to put in separate js file at some point
   $('.carousel').carousel({
