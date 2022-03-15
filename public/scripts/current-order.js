@@ -15,12 +15,9 @@ const addRemoveBtnListener = (removeBtn) => {
     tempArr.forEach((item, index) => {
       if(item.id == e.target.id) {
         dataOrder.splice(index, 1);
-        console.log(dataOrder);
+        renderOrder(dataOrder);
       }
     });
-
-    const tr = e.target.parentElement.parentElement;
-    tr.remove();
   }));
 }
 
@@ -89,7 +86,7 @@ const renderOrder = (order) => {
     addDecreaseQuantityListener(minusBtn);
     $orderEntries.append(newItem);
   }
-  $orderTotal.text(`$${totalCost.toFixed(2)}`)
+  $orderTotal.text(`$${totalCost.toFixed(2)}`);
 };
 
 
@@ -107,7 +104,6 @@ const addOrderItem = (object) => {
   return $orderItem;
 };
 
-
 // Convert backend menu data to html
 const renderMenu = (menuItems) => {
   let currCount = 0;
@@ -117,15 +113,11 @@ const renderMenu = (menuItems) => {
 
     menuArray.push(item);
     currCount++;
-    // console.log(`CurrCount: ${currCount} -- Item: ${item}`)
 
     // Create new row for every overflow item
     if (currCount % 3 === 1) {
-      // console.log(`RowNum: ${Math.ceil(currCount / 3)}`);
       $carouselRow = renderRow(Math.ceil(currCount / 3));
-      // console.log(`Carousel row: ${$carouselRow}`)
       $rowItems = $carouselRow.find('.menu-items');
-      // console.log(`Row items: ${$rowItems}`)
     }
 
     const $renderedItem = renderItem(item);
@@ -134,8 +126,6 @@ const renderMenu = (menuItems) => {
     if (currCount % 3 === 0) {
       $('.carousel-inner').append($carouselRow);
     }
-
-
   }
 
   //console.log(menuArray);
@@ -151,15 +141,25 @@ let genID = 4;
 
 const addMenuItemListener = (item, itemData) => {
   item.on('click', function(e) {
-    dataOrder.push({
-      id: genID++,
-      name: itemData.item,
-      quantity: 1,
-      price: Number(itemData.price),
-      subtotal: Number(itemData.price)
-    });
-    $orderEntries.empty();
-    renderOrder(dataOrder);
+    let checkIfExists = false;
+    // Check if item already in orders table
+    for (const orderItem of dataOrder) {
+      if (orderItem.name === itemData.item) {
+        checkIfExists = true;
+      }
+    }
+    // If item not in dataOrder, add it
+    if (!checkIfExists) {
+      dataOrder.push({
+        id: genID++,
+        name: itemData.item,
+        quantity: 1,
+        price: Number(itemData.price),
+        subtotal: Number(itemData.price)
+      });
+      $orderEntries.empty();
+      renderOrder(dataOrder);
+    }
   })
 };
 
@@ -218,7 +218,5 @@ loadItems();
   $('.carousel').carousel({
     interval: false
   });
-
-
 
 });
