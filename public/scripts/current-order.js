@@ -109,12 +109,11 @@ const renderMenu = (menuItems, filter) => {
   let currCount = 0;
   let $carouselRow;
   let $rowItems;
+  $('.carousel-inner').empty();
   for (const item of menuItems) {
-
-    menuArray.push(item);
-    currCount++;
-
+    console.log(`item.type: ${item.type} - typeof: ${typeof item.type} -- filter: ${filter} - typeof: ${typeof filter}`)
     if (item.type === filter) {
+      currCount++;
       // Create new row for every overflow item
       if (currCount % 3 === 1) {
         $carouselRow = renderRow(Math.ceil(currCount / 3));
@@ -130,8 +129,6 @@ const renderMenu = (menuItems, filter) => {
     }
     
   }
-
-  //console.log(menuArray);
 
   // If items didn't fully fill a row, add the partial row
   if (currCount % 3 !== 0) {
@@ -166,11 +163,12 @@ const addMenuItemListener = (item, itemData) => {
   })
 };
 
+// FILTER MENU BY BUTTON
 const menuButtons = $('.menu-header').children();
 jQuery.each(menuButtons, (index, button) => {
   $(`#${button.id}`).on("click", (e) => {
-    console.log(e.target);
-    // renderMenu(menuArray, e.target.id);
+    const filter = e.target.id;
+    renderMenu(menuArray, filter);
   })
 })
 
@@ -201,7 +199,10 @@ const loadItems = () => {
     dataType: "json"
   })
     .then((data) => {
-      renderMenu(data, 'burger');
+      for (const item of data) {
+        menuArray.push(item);
+      }
+      renderMenu(menuArray, 'burger');
     })
     .catch((err) => {
       console.log("Error: ", err);
