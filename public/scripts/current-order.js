@@ -5,6 +5,7 @@ import {menuArray} from './temp-data.js';
 $(() => {
 
   const $orderEntries = $('.order-entries');
+  const $orderTotal = $('#orderTotal');
 
 // REMOVE ORDER ITEM
 const addRemoveBtnListener = (removeBtn) => {
@@ -14,12 +15,9 @@ const addRemoveBtnListener = (removeBtn) => {
     tempArr.forEach((item, index) => {
       if(item.id == e.target.id) {
         dataOrder.splice(index, 1);
-        console.log(dataOrder);
+        renderOrder(dataOrder);
       }
     });
-
-    const tr = e.target.parentElement.parentElement;
-    tr.remove();
   }));
 }
 
@@ -38,7 +36,7 @@ const addIncreaseQuantityListener = (plusBtn) => {
     for (const orderItem of dataOrder) {    
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
-        console.log(orderItem.quantity);
+        orderItem.subtotal = orderItem.price * orderItem.quantity;
       }
     }
     renderOrder(dataOrder);
@@ -52,15 +50,15 @@ const addDecreaseQuantityListener = (minusBtn) => {
     const prevQuantity = Number(e.target.parentElement.children[1].value) - 1;
     
     if(prevQuantity >=1) {
-    input.val(prevQuantity);
+      input.val(prevQuantity);
     }
-
+    
     const orderItemName = $(this).parent().parent()[0].id;
-
+    
     for (const orderItem of dataOrder) {    
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
-        console.log(orderItem.quantity);
+        orderItem.subtotal = orderItem.price * orderItem.quantity;
       }
     }
     renderOrder(dataOrder);
@@ -73,6 +71,7 @@ const renderOrder = (order) => {
   $orderEntries.empty();
 
   for (const item of order) {
+    totalCost += item.subtotal;
     // Create new jquery object newItem
     const newItem = addOrderItem(item);
 
@@ -87,6 +86,7 @@ const renderOrder = (order) => {
     addDecreaseQuantityListener(minusBtn);
     $orderEntries.append(newItem);
   }
+  $orderTotal.text(`$${totalCost.toFixed(2)}`);
 };
 
 
@@ -97,13 +97,12 @@ const addOrderItem = (object) => {
       <td>${object.name}</td>
       <td><button class="minus">-</button><input class='quantity' type="text" value="${object.quantity}" min="1" max="9" /><button class="add">+</button></td>
       <td>$${object.price}</td>
-      <td>$${(Number(object.price) * object.quantity).toFixed(2)}</td>
+      <td>$${(object.price * object.quantity).toFixed(2)}</td>
       <td><button id=${object.id} class="remove-btn">Remove</button></td>
     </tr>
   `);
   return $orderItem;
 };
-
 
 // Convert backend menu data to html
 const renderMenu = (menuItems) => {
@@ -114,15 +113,11 @@ const renderMenu = (menuItems) => {
 
     menuArray.push(item);
     currCount++;
-    // console.log(`CurrCount: ${currCount} -- Item: ${item}`)
 
     // Create new row for every overflow item
     if (currCount % 3 === 1) {
-      // console.log(`RowNum: ${Math.ceil(currCount / 3)}`);
       $carouselRow = renderRow(Math.ceil(currCount / 3));
-      // console.log(`Carousel row: ${$carouselRow}`)
       $rowItems = $carouselRow.find('.menu-items');
-      // console.log(`Row items: ${$rowItems}`)
     }
 
     const $renderedItem = renderItem(item);
@@ -131,8 +126,6 @@ const renderMenu = (menuItems) => {
     if (currCount % 3 === 0) {
       $('.carousel-inner').append($carouselRow);
     }
-
-
   }
 
   //console.log(menuArray);
@@ -148,15 +141,25 @@ let genID = 4;
 
 const addMenuItemListener = (item, itemData) => {
   item.on('click', function(e) {
-    dataOrder.push({
-      id: genID++,
-      name: itemData.item,
-      quantity: 1,
-      price: itemData.price,
-      subtotal: itemData.price
-    });
-    $orderEntries.empty();
-    renderOrder(dataOrder);
+    let checkIfExists = false;
+    // Check if item already in orders table
+    for (const orderItem of dataOrder) {
+      if (orderItem.name === itemData.item) {
+        checkIfExists = true;
+      }
+    }
+    // If item not in dataOrder, add it
+    if (!checkIfExists) {
+      dataOrder.push({
+        id: genID++,
+        name: itemData.item,
+        quantity: 1,
+        price: Number(itemData.price),
+        subtotal: Number(itemData.price)
+      });
+      $orderEntries.empty();
+      renderOrder(dataOrder);
+    }
   })
 };
 
@@ -215,7 +218,5 @@ loadItems();
   $('.carousel').carousel({
     interval: false
   });
-
-
 
 });
