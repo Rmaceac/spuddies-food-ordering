@@ -166,6 +166,14 @@ const addMenuItemListener = (item, itemData) => {
   })
 };
 
+const menuButtons = $('.menu-header').children();
+jQuery.each(menuButtons, (index, button) => {
+  button.click((e) => {
+    console.log(e.target)
+  })
+  console.log(button)
+})
+
 // CREATE NEW CAROUSEL ROW
 const renderRow = (rowNum) => {
   const activeStatus = rowNum === 1 ? "carousel-item active": "carousel-item";
