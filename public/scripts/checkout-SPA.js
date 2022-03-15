@@ -1,17 +1,28 @@
+
+
+
+
 $(() => {
 
   const $submit = $('.check-out');
-
+  
   $submit.on('click', (e) =>  {
     //SET TIMEOUT & ADD SPINNER
     setTimeout(checkout, 2000);
     $potato = $('<p class="spinner">🥔</p>');
     $prepareOrder = $('<p>Preparing your order...</p>');
     $('.check-out').text('');
-    $('.check-out').append($prepareOrder, $potato)
+    $('.check-out').append($prepareOrder, $potato);
 
     // REPLACE SUBMIT WITH ORDER CONFIRMATION
+
+    /*eslint-disable*/
     function checkout() {
+
+      $.ajax('checkout.html', { method: 'GET' })
+        .then(function (checkout) {
+          $submit.replaceWith(checkout);
+
     $.ajax('checkout.html', { method: 'GET' })
     .then(function (checkout) {
       $submit.replaceWith(checkout);
