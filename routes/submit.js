@@ -6,15 +6,24 @@
  */
 
 const express = require('express');
-const { orderReadyMsg, orderEstimate } = require('../public/scripts/sms');
+const { orderReadyMsg, orderEstimate, orderSubmitted } = require('../public/scripts/sms');
 const router  = express.Router();
 
 
-module.exports = (estimate) => {
+module.exports = () => {
   // Full route './api/submit/'
-  router.get("/", (req, res) => {
-    orderEstimate("20 minutes");
+  router.post("/eta", (req, res) => {
+    // console.log('Request:', req.body.eta);
+    orderEstimate(req.body.eta);
     res.send("Notification Sent");
   });
+
+  router.get("/", (req, res) => {
+    console.log("Order received");
+    orderSubmitted();
+  });
+
   return router;
 };
+
+

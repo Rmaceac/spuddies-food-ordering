@@ -34,4 +34,4 @@ const orderSubmitted = () => {
     .then(message => console.log(message.status));
 }
 
-module.exports = {orderReadyMsg, orderEstimate};
+module.exports = {orderReadyMsg, orderEstimate, orderSubmitted};
