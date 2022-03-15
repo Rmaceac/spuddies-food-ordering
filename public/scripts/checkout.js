@@ -16,9 +16,19 @@ $(() => {
     function checkout() {
     $.ajax('checkout.html', { method: 'GET' })
     .then(function (checkout) {
-      $submit.replaceWith(checkout);
-
-      // INSERT API HERE
+      $submit.replaceWith(checkout); 
+      
+      // API CALL - TWILLIO
+      $.ajax({
+        url: "http://localhost:8084/api/submit",
+        method: "GET"
+      })
+        .then((data) => {
+          console.log("DATA:", data);
+        })
+        .catch((err) => {
+          console.log("Error: ", err);
+        });
 
         // REMOVE CURRENT ORDER BUTTONS & STOP SPINNER
         const $add = $('.add');
@@ -55,7 +65,5 @@ $(() => {
       });
     }
   });
-
-
   
 });

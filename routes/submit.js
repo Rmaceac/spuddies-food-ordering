@@ -6,23 +6,15 @@
  */
 
 const express = require('express');
+const { orderReadyMsg, orderEstimate } = require('../public/scripts/sms');
 const router  = express.Router();
 
 
-module.exports = (db) => {
-  // Full route './api/users/'
+module.exports = (estimate) => {
+  // Full route './api/submit/'
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
-      .then(data => {
-        const users = data.rows;
-        console.log(users);
-        res.json({ users });
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
+    orderEstimate("20 minutes");
+    res.send("Notification Sent");
   });
   return router;
 };

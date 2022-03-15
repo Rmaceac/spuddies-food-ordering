@@ -14,16 +14,14 @@ const orderReadyMsg = () => {
     .then(message => console.log(message.status));
 };
 
-const orderEstimate = () => {
+const orderEstimate = (estimate) => {
   client.messages
     .create({
-      body: 'Your order will be ready in 30 seconds!',
+      body: `Your order will be ready in ${estimate}.`,
       from: '+18455813733',
       to: process.env.PHONE
     })
     .then(message => console.log(message.status));
 };
 
-
-
-module.exports = { orderReadyMsg, orderEstimate };
+module.exports = {orderReadyMsg, orderEstimate};
