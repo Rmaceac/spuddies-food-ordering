@@ -111,7 +111,7 @@ const renderMenu = (menuItems, filter) => {
   let $rowItems;
   $('.carousel-inner').empty();
   for (const item of menuItems) {
-    console.log(`item.type: ${item.type} - typeof: ${typeof item.type} -- filter: ${filter} - typeof: ${typeof filter}`)
+    // console.log(`item.type: ${item.type} - typeof: ${typeof item.type} -- filter: ${filter} - typeof: ${typeof filter}`)
     if (item.type === filter) {
       currCount++;
       // Create new row for every overflow item
@@ -168,7 +168,7 @@ const menuButtons = $('.menu-header').children('input');
 console.log(menuButtons)
 jQuery.each(menuButtons, (index, button) => {
   $(`#${button.id}`).on("click", (e) => {
-    const filter = button.name;
+    const filter = e.target.labels[0].id;
     renderMenu(menuArray, filter);
   })
 })
@@ -201,7 +201,9 @@ const loadItems = () => {
   })
     .then((data) => {
       for (const item of data) {
-        menuArray.push(item);
+        for (let i = 0; i < 3; i++) {
+          menuArray.push(item);
+        }
       }
       renderMenu(menuArray, 'burger');
     })
