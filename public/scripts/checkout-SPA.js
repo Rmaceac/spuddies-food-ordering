@@ -1,13 +1,16 @@
+const { orderReadyMsg } = require("./sms");
+
 require("dotenv").config();
+require("sms");
 
 $(() => {
 
   
 
-  const $submit = $('.check-out')
-  const $add = $('.add')
-  const $minus = $('.minus')
-  const $remove = $('.remove-btn')
+  const $submit = $('.check-out');
+  const $add = $('.add');
+  const $minus = $('.minus');
+  const $remove = $('.remove-btn');
 
   $submit.on('click', (e) =>  {
     console.log(e);
@@ -19,35 +22,37 @@ $(() => {
     $('.check-out').append($prepareOrder, $potato)
 
     // REPLACE SUBMIT WITH ORDER CONFIRMATION
-    function checkout() {
-    $.ajax('checkout.html', { method: 'GET' })
-    .then(function (checkout) {
-      $submit.replaceWith(checkout);
+    const checkout = function() {
+      $.ajax('checkout.html', { method: 'GET' })
+        .then(function (checkout) {
+          $submit.replaceWith(checkout);
 
-      // REMOVE CURRENT ORDER BUTTONS & STOP SPINNER
-      $add.hide();
-      $minus.hide();
-      $remove.hide();
-      $potato.hide();
+          // REMOVE CURRENT ORDER BUTTONS & STOP SPINNER
+          $add.hide();
+          $minus.hide();
+          $remove.hide();
+          $potato.hide();
 
-      // ADD LOADING BAR
-      $loadingBar = $('<i class="fa-solid fa-bars-progress progress-bar"></i>');
-      $('.loading-bar').append($loadingBar);
-      // //SET TIMEOUT ON PROGRESS BAR
-      // $cooking = $('')
-      // setTimeout(cooking, 10000);
-      // function cooking() {
-      //   $loadingBar.replaceWith($packaging)
-      // }
-      // setTimeout(packaging, 15000);
-      // function packaging() {
-      //   $packaging.replaceWith($pickup)
-      // }
-      // setTimeout(pickup, 20000);
-      //   $pickup.replaceWith($complete)
+          // ADD LOADING BAR
+          $loadingBar = $('<i class="fa-solid fa-bars-progress progress-bar"></i>');
+          $('.loading-bar').append($loadingBar);
+          // //SET TIMEOUT ON PROGRESS BAR
+          // $cooking = $('')
+          // setTimeout(cooking, 10000);
+          // function cooking() {
+          //   $loadingBar.replaceWith($packaging)
+          // }
+          // setTimeout(packaging, 15000);
+          // function packaging() {
+          //   $packaging.replaceWith($pickup)
+          // }
+          // setTimeout(pickup, 20000);
+          //   $pickup.replaceWith($complete)
 
-    });
-    }
+        });
+    };
+
+    orderReadyMsg();
   });
 
 
