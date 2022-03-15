@@ -1,4 +1,8 @@
+require("dotenv").config();
+
 $(() => {
+
+  
 
   const $submit = $('.check-out')
   const $add = $('.add')
@@ -45,13 +49,6 @@ $(() => {
     });
     }
   });
-
-
-
-
-
-
-
 
 
 });
