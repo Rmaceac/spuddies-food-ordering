@@ -19,7 +19,6 @@ $(() => {
     $('.check-out').append($prepareOrder, $potato);
 
     // REPLACE SUBMIT WITH ORDER CONFIRMATION
-
     /*eslint-disable*/
     function checkout() {
 
@@ -102,7 +101,6 @@ $(() => {
         });
     };
 
-    orderReadyMsg();
   });
 
 
