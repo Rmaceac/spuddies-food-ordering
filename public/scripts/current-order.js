@@ -105,30 +105,30 @@ const addOrderItem = (object) => {
 };
 
 // Convert backend menu data to html
-const renderMenu = (menuItems) => {
+const renderMenu = (menuItems, filter) => {
   let currCount = 0;
   let $carouselRow;
   let $rowItems;
+  $('.carousel-inner').empty();
   for (const item of menuItems) {
+    // console.log(`item.type: ${item.type} - typeof: ${typeof item.type} -- filter: ${filter} - typeof: ${typeof filter}`)
+    if (item.type === filter) {
+      currCount++;
+      // Create new row for every overflow item
+      if (currCount % 3 === 1) {
+        $carouselRow = renderRow(Math.ceil(currCount / 3));
+        $rowItems = $carouselRow.find('.menu-items');
+      }
 
-    menuArray.push(item);
-    currCount++;
-
-    // Create new row for every overflow item
-    if (currCount % 3 === 1) {
-      $carouselRow = renderRow(Math.ceil(currCount / 3));
-      $rowItems = $carouselRow.find('.menu-items');
+      const $renderedItem = renderItem(item);
+      $rowItems.append($renderedItem);
+      addMenuItemListener($renderedItem, item);
+      if (currCount % 3 === 0) {
+        $('.carousel-inner').append($carouselRow);
+      }
     }
-
-    const $renderedItem = renderItem(item);
-    $rowItems.append($renderedItem);
-    addMenuItemListener($renderedItem, item);
-    if (currCount % 3 === 0) {
-      $('.carousel-inner').append($carouselRow);
-    }
+    
   }
-
-  //console.log(menuArray);
 
   // If items didn't fully fill a row, add the partial row
   if (currCount % 3 !== 0) {
@@ -163,7 +163,15 @@ const addMenuItemListener = (item, itemData) => {
   })
 };
 
-
+// FILTER MENU BY BUTTON
+const menuButtons = $('.menu-header').children('input');
+console.log(menuButtons)
+jQuery.each(menuButtons, (index, button) => {
+  $(`#${button.id}`).on("click", (e) => {
+    const filter = e.target.labels[0].id;
+    renderMenu(menuArray, filter);
+  })
+})
 
 // CREATE NEW CAROUSEL ROW
 const renderRow = (rowNum) => {
@@ -203,7 +211,12 @@ const loadItems = () => {
     dataType: "json"
   })
     .then((data) => {
-      renderMenu(data);
+      for (const item of data) {
+        for (let i = 0; i < 3; i++) {
+          menuArray.push(item);
+        }
+      }
+      renderMenu(menuArray, 'burger');
     })
     .catch((err) => {
       console.log("Error: ", err);
