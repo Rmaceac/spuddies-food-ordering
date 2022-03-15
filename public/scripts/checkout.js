@@ -16,8 +16,8 @@ $(() => {
     function checkout() {
     $.ajax('checkout.html', { method: 'GET' })
     .then(function (checkout) {
-      $submit.replaceWith(checkout); 
-      
+      $submit.replaceWith(checkout);
+
       // API CALL - TWILLIO
       $.ajax({
         url: "http://localhost:8084/api/submit",
@@ -53,7 +53,7 @@ $(() => {
           $('.loading-bar').append($stageThree);
           $stageOne.hide();
           $stageTwo.hide();
-        }, 5000)
+        }, 4000)
         setTimeout( () => {
           console.log("Stage Four");
           $stageFour = $('<div class="progress"><div class="stageFour progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>');
@@ -61,9 +61,18 @@ $(() => {
           $stageOne.hide();
           $stageTwo.hide();
           $stageThree.hide();
-        }, 7000);
+        }, 5000);
       });
     }
+
   });
-  
+
+  $percentage = $('.loading-bar')
+  console.log($percentage);
+  currentValue = $percentage.val();
+  console.log(currentValue)
+  $valueNow = $('aria-valuenow');
+  console.log($valueNow);
+
+
 });

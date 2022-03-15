@@ -20,11 +20,39 @@
 .received-container {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
 }
 
-.progress {
-  width: 500px;
-  height: 20px;  
+// LOADING BAR ANIMATION
+.progress .stageOne {
+  height: 20px;
+  animation: loading-bar-one 3.0s;
+}
+.progress .stageTwo {
+  height: 20px;
+  animation: loading-bar-two 1.0s;
+}
+.progress .stageThree {
+  height: 20px;
+  animation: loading-bar-three 1.0s;
+}
+.progress .stageFour {
+  height: 20px;
+  animation: loading-bar-four 1.0s;
+}
+@keyframes loading-bar-one {
+  from  {width: 0px;}
+  to {width: 200px;}
+}
+@keyframes loading-bar-two {
+  from  {width: 200px;}
+  to {width: 400px;}
+}
+@keyframes loading-bar-three {
+  from  {width: 400px;}
+  to {width: 600px;}
+}
+@keyframes loading-bar-four {
+  from  {width: 600px;}
+  to {width: 800px;}
 }
