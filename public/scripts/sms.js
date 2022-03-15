@@ -24,4 +24,14 @@ const orderEstimate = (estimate) => {
     .then(message => console.log(message.status));
 };
 
+const orderSubmitted = () => {
+  client.messages
+    .create({
+      body: 'Someone has submitted an order!',
+      from: '+18455813733',
+      to: process.env.PHONE
+    })
+    .then(message => console.log(message.status));
+}
+
 module.exports = {orderReadyMsg, orderEstimate};
