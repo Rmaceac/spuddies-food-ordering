@@ -1,107 +1,61 @@
 
-// const { orderReadyMsg } = require("./sms");
-
-// require("dotenv").config();
-// require("sms");
-
-
 $(() => {
 
   const $submit = $('.check-out');
-  
+
   $submit.on('click', (e) =>  {
-    console.log(e);
     //SET TIMEOUT & ADD SPINNER
     setTimeout(checkout, 2000);
-    $potato = $('<p class="spinner">🥔</p>')
-    $prepareOrder = $('<p>Preparing your order...</p>')
+    $potato = $('<p class="spinner">🥔</p>');
+    $prepareOrder = $('<p>Preparing your order...</p>');
     $('.check-out').text('');
     $('.check-out').append($prepareOrder, $potato);
 
     // REPLACE SUBMIT WITH ORDER CONFIRMATION
     /*eslint-disable*/
     function checkout() {
-
-      $.ajax('checkout.html', { method: 'GET' })
-        .then(function (checkout) {
-          $submit.replaceWith(checkout);
-
     $.ajax('checkout.html', { method: 'GET' })
     .then(function (checkout) {
       $submit.replaceWith(checkout);
 
-      // REMOVE CURRENT ORDER BUTTONS & STOP SPINNER
-      const $add = $('.add')
-      const $minus = $('.minus')
-      const $remove = $('.remove-btn')
-      $add.hide();
-      $minus.hide();
-      $remove.hide();
+      // INSERT API HERE
 
-      // ADD LOADING BAR
-      $loadingBar = $('<div class="progress-bar"></div>');
-      $('.loading-bar').append($loadingBar);
+        // REMOVE CURRENT ORDER BUTTONS & STOP SPINNER
+        const $add = $('.add');
+        const $minus = $('.minus');
+        const $remove = $('.remove-btn');
+        $add.hide();
+        $minus.hide();
+        $remove.hide();
 
-      setTimeout( () => {
-        console.log("Stage Two")
-      }, 3000)
-      setTimeout( () => {
-        console.log("Stage Three")
-      }, 5000)
-      setTimeout( () => {
-        console.log("Stage Four")
-      }, 7000)
-
-
-      // //SET TIMEOUT ON PROGRESS BAR
-      // $cooking = $('')
-      // setTimeout(cooking, 10000);
-      // function cooking() {
-      //   $loadingBar.replaceWith($packaging)
-      // }
-      // setTimeout(packaging, 15000);
-      // function packaging() {
-      //   $packaging.replaceWith($pickup)
-      // }
-      // setTimeout(pickup, 20000);
-      //   $pickup.replaceWith($complete)
-
-    });
+        // ADD LOADING BAR
+        $stageOne = $('<div class="progress"><div class="stageOne progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>');
+        $('.loading-bar').append($stageOne);
+        setTimeout( () => {
+          console.log("Stage Two");
+          $stageTwo = $('<div class="progress"><div class="stageTwo progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>');
+          $('.loading-bar').append($stageTwo);
+          $stageOne.hide();
+        }, 3000)
+        setTimeout( () => {
+          console.log("Stage Three");
+          $stageThree = $('<div class="progress"><div class="stageThree progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>');
+          $('.loading-bar').append($stageThree);
+          $stageOne.hide();
+          $stageTwo.hide();
+        }, 5000)
+        setTimeout( () => {
+          console.log("Stage Four");
+          $stageFour = $('<div class="progress"><div class="stageFour progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>');
+          $('.loading-bar').append($stageFour);
+          $stageOne.hide();
+          $stageTwo.hide();
+          $stageThree.hide();
+        }, 7000);
+      });
     }
   });
 
 
-          // REMOVE CURRENT ORDER BUTTONS & STOP SPINNER
-          $add.hide();
-          $minus.hide();
-
-          $remove.hide();          
-          const $add = $('.add');
-          const $minus = $('.minus');
-          const $remove = $('.remove-btn');
-
-          // ADD LOADING BAR
-          /*eslint-enable*/
-
-          $loadingBar = $('<i class="fa-solid fa-bars-progress progress-bar"></i>');
-          $('.loading-bar').append($loadingBar);
-          // //SET TIMEOUT ON PROGRESS BAR
-          // $cooking = $('')
-          // setTimeout(cooking, 10000);
-          // function cooking() {
-          //   $loadingBar.replaceWith($packaging)
-          // }
-          // setTimeout(packaging, 15000);
-          // function packaging() {
-          //   $packaging.replaceWith($pickup)
-          // }
-          // setTimeout(pickup, 20000);
-          //   $pickup.replaceWith($complete)
-
-        });
-    };
-
-  });
-
-
+  
 });
