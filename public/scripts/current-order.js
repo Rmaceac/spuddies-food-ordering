@@ -167,10 +167,10 @@ const addMenuItemListener = (item, itemData) => {
 const menuButtons = $('.menu-header').children('input');
 console.log(menuButtons)
 jQuery.each(menuButtons, (index, button) => {
-  // $(`#${button.id}`).on("click", (e) => {
-  //   const filter = e.target.id;
-  //   renderMenu(menuArray, filter);
-  // })
+  $(`#${button.id}`).on("click", (e) => {
+    const filter = button.name;
+    renderMenu(menuArray, filter);
+  })
 })
 
 // CREATE NEW CAROUSEL ROW
