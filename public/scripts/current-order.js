@@ -169,7 +169,8 @@ const addMenuItemListener = (item, itemData) => {
 const menuButtons = $('.menu-header').children();
 jQuery.each(menuButtons, (index, button) => {
   $(`#${button.id}`).on("click", (e) => {
-    console.log(e.target)
+    console.log(e.target);
+    // renderMenu(menuArray, e.target.id);
   })
 })
 
