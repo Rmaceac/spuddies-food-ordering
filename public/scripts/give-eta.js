@@ -6,10 +6,11 @@ $(() => {
   $submit.on('click', function(e) {
     e.preventDefault();
     
+    // Text from estimate input field
     const estimate = {
       eta: $estimate.val()
     };
-    // console.log($estimate.val());
+    
     $.ajax({
       url: "http://localhost:8084/api/submit/eta",
       method: "POST",

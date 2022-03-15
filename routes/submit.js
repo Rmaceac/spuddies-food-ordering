@@ -13,9 +13,13 @@ const router  = express.Router();
 module.exports = () => {
   // Full route './api/submit/'
   router.post("/eta", (req, res) => {
-    // console.log('Request:', req.body.eta);
-    orderEstimate(req.body.eta);
+    const eta = req.body.eta;
+    orderEstimate(eta);
     res.send("Notification Sent");
+
+    const time = Number(eta.slice(0, 2));
+    setTimeout(
+      orderReadyMsg, time * 1000);
   });
 
   router.get("/", (req, res) => {
