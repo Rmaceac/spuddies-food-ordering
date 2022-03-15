@@ -33,14 +33,14 @@ const addIncreaseQuantityListener = (plusBtn) => {
       input.val(prevQuantity);
     }
 
-    for (const orderItem of dataOrder) {    
+    for (const orderItem of dataOrder) {
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
         orderItem.subtotal = orderItem.price * orderItem.quantity;
       }
     }
     renderOrder(dataOrder);
-    
+
   });
 };
 
@@ -48,14 +48,14 @@ const addDecreaseQuantityListener = (minusBtn) => {
   minusBtn.on('click', function(e) {
     const input = $(this).siblings('.quantity');
     const prevQuantity = Number(e.target.parentElement.children[1].value) - 1;
-    
+
     if(prevQuantity >=1) {
       input.val(prevQuantity);
     }
-    
+
     const orderItemName = $(this).parent().parent()[0].id;
-    
-    for (const orderItem of dataOrder) {    
+
+    for (const orderItem of dataOrder) {
       if (orderItem.name === orderItemName) {
         orderItem.quantity = Number(e.target.parentElement.children[1].value);
         orderItem.subtotal = orderItem.price * orderItem.quantity;
@@ -188,7 +188,18 @@ const renderRow = (rowNum) => {
 // CREATE SINGLE MENU ITEM
 const renderItem = (itemObj) => {
   const $menuItem = $(`
-  <img id=${itemObj.id} class="item" src="${itemObj.thumbnail_url}">
+  <div class="flip-box">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">
+        <img id=${itemObj.id} class="item" src="${itemObj.thumbnail_url}">
+      </div>
+      <div class="flip-box-back">
+        <h3>${itemObj.item}</h2>
+        <p>${itemObj.description}</p>
+        <h3>${itemObj.price}</h3>
+      </div>
+    </div>
+  </div>
 `);
 return $menuItem;
 };
