@@ -105,7 +105,7 @@ const addOrderItem = (object) => {
 };
 
 // Convert backend menu data to html
-const renderMenu = (menuItems) => {
+const renderMenu = (menuItems, filter) => {
   let currCount = 0;
   let $carouselRow;
   let $rowItems;
@@ -114,18 +114,21 @@ const renderMenu = (menuItems) => {
     menuArray.push(item);
     currCount++;
 
-    // Create new row for every overflow item
-    if (currCount % 3 === 1) {
-      $carouselRow = renderRow(Math.ceil(currCount / 3));
-      $rowItems = $carouselRow.find('.menu-items');
-    }
+    if (item.type === filter) {
+      // Create new row for every overflow item
+      if (currCount % 3 === 1) {
+        $carouselRow = renderRow(Math.ceil(currCount / 3));
+        $rowItems = $carouselRow.find('.menu-items');
+      }
 
-    const $renderedItem = renderItem(item);
-    $rowItems.append($renderedItem);
-    addMenuItemListener($renderedItem, item);
-    if (currCount % 3 === 0) {
-      $('.carousel-inner').append($carouselRow);
+      const $renderedItem = renderItem(item);
+      $rowItems.append($renderedItem);
+      addMenuItemListener($renderedItem, item);
+      if (currCount % 3 === 0) {
+        $('.carousel-inner').append($carouselRow);
+      }
     }
+    
   }
 
   //console.log(menuArray);
@@ -190,7 +193,7 @@ const loadItems = () => {
     dataType: "json"
   })
     .then((data) => {
-      renderMenu(data);
+      renderMenu(data, 'burger');
     })
     .catch((err) => {
       console.log("Error: ", err);
