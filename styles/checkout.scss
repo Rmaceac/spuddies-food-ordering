@@ -34,8 +34,14 @@
   background-size: 40vh;
 }
 
+.loading-bar {
+  height: 50px;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.575);
+}
+
 .progress {
-  height: 100px;
+  height: 50px;
 }
 // LOADING BAR ANIMATION
 .progress .stageOne {
