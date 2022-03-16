@@ -13,7 +13,7 @@ const router  = express.Router();
 module.exports = (estimate) => {
   // Full route './api/submit/'
   router.get("/", (req, res) => {
-    orderEstimate("20 minutes");
+    // orderEstimate("20 minutes");
     res.send("Notification Sent");
   });
   return router;
