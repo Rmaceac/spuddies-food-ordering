@@ -211,9 +211,7 @@ const loadItems = () => {
   })
     .then((data) => {
       for (const item of data) {
-        for (let i = 0; i < 3; i++) {
-          menuArray.push(item);
-        }
+        menuArray.push(item);
       }
       renderMenu(menuArray, 'burger');
     })

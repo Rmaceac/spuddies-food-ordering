@@ -1,5 +1,5 @@
 .spinner {
-  font-size: 500%;
+  font-size: 300%;
   animation: spin-animation 1.0s 4000;
 }
 
@@ -14,7 +14,11 @@
 
 .check-out {
   align-self: center;
-  width: 30%;
+  width: fit-content;
+}
+
+.prep {
+  font-size: 24px;
 }
 
 .received-container {
@@ -66,4 +70,12 @@
   background-color: #ffffffcf;
   padding: 10px;
   border-radius: 10px;
+}
+
+.loading-text > p {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #ffffffcf;
+  padding: 5px;
+  border-radius: 5px;
 }
