@@ -37,11 +37,12 @@
 .loading-bar {
   height: 50px;
   width: 80%;
-  background-color: rgba(255, 255, 255, 0.575);
+  // background-color: rgba(255, 255, 255, 0.116);
 }
 
 .progress {
   height: 50px;
+  background-color: rgba(255, 255, 255, 0.486);
 }
 // LOADING BAR ANIMATION
 .progress .stageOne {
@@ -58,19 +59,19 @@
 }
 @keyframes loading-bar-one {
   from  {width: 0px;}
-  to {width: 200px;}
+  to {width: 25%;}
 }
 @keyframes loading-bar-two {
-  from  {width: 200px;}
-  to {width: 400px;}
+  from  {width: 25%;}
+  to {width: 50%;}
 }
 @keyframes loading-bar-three {
-  from  {width: 400px;}
-  to {width: 600px;}
+  from  {width: 50%;}
+  to {width: 75%;}
 }
 @keyframes loading-bar-four {
-  from  {width: 600px;}
-  to {width: 800px;}
+  from  {width: 75%;}
+  to {width: 100%;}
 }
 .loading-text > p {
   text-align: center;
