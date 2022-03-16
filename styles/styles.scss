@@ -67,6 +67,20 @@ button {
   text-align: center;
 }
 
+td > button {
+  margin: 0;
+  padding: 0 10px;
+  line-height: 20px;
+}
+
+.add {
+  border-radius: 6px 15px 15px 6px;
+}
+
+.minus {
+  border-radius: 15px 6px 6px 15px;
+}
+
 .orderTotalContainer {
   text-align: center;
   align-self: flex-end;
