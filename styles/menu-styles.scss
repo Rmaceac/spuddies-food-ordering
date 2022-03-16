@@ -1,5 +1,5 @@
 .item:hover {
-  transform: scale(1.0);
+  transform: scale(1.2);
   border-radius: 10px;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -38,8 +38,8 @@
 // MENU DETAILS
 .flip-box {
   background-color: transparent;
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 .flip-box-inner {
@@ -69,8 +69,9 @@
 }
 
 .flip-box-back {
-  background-color: dodgerblue;
-  color: white;
+  background-color: lightblue;
+  color: black;
+  border: 2px solid rgb(68, 191, 231);
   border-radius: 10px;
   transform: rotateY(180deg);
 }
