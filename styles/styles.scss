@@ -49,12 +49,18 @@ button {
   margin: 0px 5px 10px;
   padding: 5px 10px;
   border-radius: 6px;
+
 //   background-color: #8c8c17;
 // background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   // background-color: #8a6300;
   // background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   background-color: #7a4300;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 2px #9f6200;
+  transition: 0.3s;
 }
 
 /* ORDER CSS */
@@ -177,9 +183,18 @@ span::after{
 h2, h5 {
   text-align: center;
 }
-
 h1, h2, h3, th {
   font-family: 'Acme', sans-serif;
+}
+h2 {
+  font-size: 3rem;
+  color: white;
+  -webkit-text-stroke: 1px black;
+}
+th {
+  font-size: 2rem;
+  color: black;
+  -webkit-text-stroke: 1px white;
 }
 
 .menu-header {
