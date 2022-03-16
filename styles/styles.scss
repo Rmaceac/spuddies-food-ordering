@@ -120,7 +120,9 @@ td > button {
   border: none;
   cursor: pointer;
   margin: 0px;
-  padding: 0 20px;
+  padding: 0;
+  padding-left: 35px;
+  padding-right: 15px;
   transition: 0.3s;
 }
 .check-out span {
@@ -139,12 +141,12 @@ span::after{
 }
 
 .check-out:hover {
-  // padding-right: 20px;
   transform: scale(1.05);
+  box-shadow: 0 0 5px 5px #9f6200;
 }
 
-.check-out:hover span::after {
-  transform: scale(2);
+.check-out:hover > span::after {
+  transform: scale(4);
   opacity: 1;
   right: -5px;
 }
