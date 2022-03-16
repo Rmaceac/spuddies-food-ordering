@@ -13,9 +13,10 @@ main {
 .nav{
   display: flex;
   justify-content: flex-end;
-  padding: 20px;
-  background-color: lightblue;
-  // opacity: 70%;
+  padding: 25px;
+  background-color: #add8e6c9;
+  position: absolute;
+  width: 80vw;
 }
 .current-user {
   margin: 0px;
