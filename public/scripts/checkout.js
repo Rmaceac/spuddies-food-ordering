@@ -13,7 +13,6 @@ $(() => {
     $('.check-out').append($prepareOrder, $potato);
 
     // REPLACE SUBMIT WITH ORDER CONFIRMATION
-    /*eslint-disable*/
     function checkout() {
     $.ajax('checkout.html', { method: 'GET' })
     .then(function (checkout) {
@@ -75,17 +74,6 @@ $(() => {
           $package.hide();
         }, 7000);
       });
-
     }
-
   });
-
-  $percentage = $('.loading-bar')
-  console.log($percentage);
-  currentValue = $percentage.val();
-  console.log(currentValue)
-  $valueNow = $('aria-valuenow');
-  console.log($valueNow);
-
-
 });
