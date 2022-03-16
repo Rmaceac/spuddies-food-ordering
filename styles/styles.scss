@@ -27,6 +27,10 @@ main {
   width: 20%;
 }
 button {
+  font-family: 'Acme', sans-serif;
+  color: white;
+  border: none;
+  cursor: pointer;
   margin: 10px;
   padding: 10px;
   border-radius: 6px;
@@ -95,8 +99,42 @@ button {
   z-index: 1;
 }
 
-h2 {
+// SUBMIT ORDER BUTTON
+.check-out {
+  font-family: 'Acme', sans-serif;
+  width: fit-content;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.check-out span {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.5s;
+}
+//THIS STYLE ISN'T WORKING?
+span::after{
+  content: ' > >';
+  position: relative;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.check-out:hover span {
+  padding-right: 20px;
+};
+.check-out:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+h2, h5 {
   text-align: center;
+}
+
+h1, h2, h3, th {
+  font-family: 'Acme', sans-serif;
 }
 
 .menu-header {
@@ -104,10 +142,6 @@ h2 {
   justify-content: center;
   margin: 0px 200px;
   padding-bottom: 20px;
-}
-
-h5 {
-  text-align: center;
 }
 
 .menu-items {

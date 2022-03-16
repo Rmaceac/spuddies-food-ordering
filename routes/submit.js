@@ -15,7 +15,7 @@ module.exports = (db) => {
 
   router.post("/eta", (req, res) => {
     const eta = req.body.eta;
-    orderEstimate(eta);
+    // orderEstimate(eta);
 
     res.send("Notification Sent");
 
@@ -26,7 +26,7 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
     console.log("Order received");
-    orderSubmitted();
+    // orderSubmitted();
   });
 
   router.post("/order", (req, res) => {
