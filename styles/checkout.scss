@@ -12,6 +12,10 @@
   }
 }
 
+.spinner-text {
+  font-size: 1.5rem;
+}
+
 .check-out {
   align-self: center;
   width: 30%;
@@ -26,21 +30,20 @@
   background-size: 40vh;
 }
 
+.progress {
+  height: 100px;
+}
 // LOADING BAR ANIMATION
 .progress .stageOne {
-  height: 20px;
   animation: loading-bar-one 3.0s;
 }
 .progress .stageTwo {
-  height: 20px;
   animation: loading-bar-two 1.0s;
 }
 .progress .stageThree {
-  height: 20px;
   animation: loading-bar-three 1.0s;
 }
 .progress .stageFour {
-  height: 20px;
   animation: loading-bar-four 2.0s;
 }
 @keyframes loading-bar-one {
@@ -63,11 +66,13 @@
   text-align: center;
   background-color: #ffffffcf;
   padding: 5px;
+  font-size: 2rem;
   border-radius: 10px;
 }
 
 .loading-text > h3 {
   background-color: #ffffffcf;
   padding: 10px;
+  font-size: 3rem;
   border-radius: 10px;
 }
