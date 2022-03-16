@@ -2,6 +2,7 @@
 $(() => {
 
   const $submit = $('.check-out');
+  const $menuContainer = $('.menu-container')
 
   $submit.on('click', (e) =>  {
     //SET TIMEOUT & ADD SPINNER
@@ -16,7 +17,7 @@ $(() => {
     function checkout() {
     $.ajax('checkout.html', { method: 'GET' })
     .then(function (checkout) {
-      $submit.replaceWith(checkout);
+      $menuContainer.replaceWith(checkout);
 
       // API CALL - TWILLIO
       $.ajax({
@@ -37,6 +38,7 @@ $(() => {
         $add.hide();
         $minus.hide();
         $remove.hide();
+        $submit.hide();
 
         // ADD LOADING BAR
         $stageOne = $('<div class="progress"><div class="stageOne progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>');
@@ -52,24 +54,28 @@ $(() => {
           $stageOne.hide();
         }, 3000)
         setTimeout( () => {
-          console.log("Stage Three");
           $stageThree = $('<div class="progress"><div class="stageThree progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>');
-          $package = $('<p>Packaging your order</p>');
-          $('.loading-text').append($package);
+          $assemble = $('<p>Potato assembly</p>');
+          $('.loading-text').append($assemble);
           $('.loading-bar').append($stageThree);
           $bath.hide();
           $stageTwo.hide();
         }, 4000)
         setTimeout( () => {
-          console.log("Stage Four");
           $stageFour = $('<div class="progress"><div class="stageFour progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>');
-          $ready = $('<p>Your order is ready for pick-up!</p>');
-          $('.loading-text').append($ready);
+          $package = $('<p>Packaging your order</p>');
+          $('.loading-text').append($package);
           $('.loading-bar').append($stageFour);
-          $package.hide();
+          $assemble.hide();
           $stageThree.hide();
         }, 5000);
+        setTimeout( () => {
+          $ready = $('<h3>Your order is ready for pick-up!</h3>');
+          $('.loading-text').append($ready);
+          $package.hide();
+        }, 7000);
       });
+
     }
 
   });
