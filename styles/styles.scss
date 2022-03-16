@@ -171,6 +171,8 @@ h1, h2, h3, th {
   justify-content: space-evenly;
   width: 90%;
   margin: 0 auto;
+  padding: 50px;
+  padding-bottom: 80px;
 }
 
 .item {
@@ -189,9 +191,6 @@ h1, h2, h3, th {
   width: fit-content;
   height: fit-content;
   margin: auto 0;
-}
-.menu-items {
-  padding: 50px;
 }
 
 .carousel-container {
