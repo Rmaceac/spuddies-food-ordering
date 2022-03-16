@@ -64,20 +64,18 @@
 
     <p class="orderTotalContainer">Total: <span id="orderTotal">$0.00</span></p>
 
-    <form action="/orders/fetch" method="GET" >
-      <div>
+    <div>
+      <form action="/orders/fetch" method="GET" >
         <label></label>
         <input placeholder="Enter Order ID" type="text" style="width: 300px; margin: 1em; background-color: white;">
         <button type="submit" >FETCH ORDER</button>
-      </div>
-    </form>
-    <form action="api/submit/eta" method="POST">
-      <div>
+      </form>
+      <form action="api/submit/eta" method="POST">
         <label></label>
         <input placeholder="Estimated time until order ready" id="estimate" type="text" style="width: 300px; margin: 1em; background-color: white">
         <button id="eta" type="submit" >SEND ETA</button>
-      </div>
-    </form>
+      </form>
+    </div>
   </section>
 
 <!-- FOOTER -->

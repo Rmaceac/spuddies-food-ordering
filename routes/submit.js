@@ -10,7 +10,7 @@ const { orderReadyMsg, orderEstimate, orderSubmitted } = require('../public/scri
 const router  = express.Router();
 
 
-module.exports = () => {
+module.exports = (db) => {
   // Full route './api/submit/'
   router.post("/eta", (req, res) => {
     const eta = req.body.eta;
@@ -27,7 +27,23 @@ module.exports = () => {
     orderSubmitted();
   });
 
+  router.post("/order", (req, res) => {
+    console.log("Post request made to /api/submit/order");
+    console.log(`Req.body: ${req.body.getOrder}`);
+
+    for (const item of req.body.getOrder) {
+      console.log("Item:", item);
+    }
+
+  //   const queryString = ` INSERT INTO orders (user_id, total_price) VALUES (2, $1);
+  //   INSERT INTO order_items (order_id, menu_items_id, quantity, sub_total) VALUES (1, $2, $3, $4);`;
+  //   const params = "";
+
+  //   db.query(queryString, params)
+  //     .then(data => {
+  //       console.log("Order submitted to database");
+  //     });
+  });
+
   return router;
 };
-
-
