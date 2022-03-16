@@ -164,7 +164,7 @@ const addMenuItemListener = (item, itemData) => {
 
 // FILTER MENU BY BUTTON
 const menuButtons = $('.menu-header').children('input');
-console.log(menuButtons)
+// console.log(menuButtons)
 jQuery.each(menuButtons, (index, button) => {
   $(`#${button.id}`).on("click", (e) => {
     const filter = e.target.labels[0].id;
@@ -221,6 +221,23 @@ const loadItems = () => {
       console.log("Error: ", err);
     });
 };
+
+$('.check-out').on('click', (e) => {
+  const order = {
+    getOrder: dataOrder
+  }
+  $.ajax({
+    url: "http://localhost:8084/api/submit/order",
+    method: "POST",
+    data: order
+  })
+    .then((data) => {
+      console.log("DATA:", data);
+    })
+    .catch((err) => {
+      console.log("Error: ", err);
+    });
+});
 
 loadItems();
 
