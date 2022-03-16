@@ -46,7 +46,7 @@ button {
   display: flex;
   flex-direction: column;
   padding: 25px;
-  height: 55vh;
+  height: 50vh;
   background-color: lightgreen;
 }
 
@@ -142,7 +142,7 @@ span::after{
 
 .check-out:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 5px 5px #9f6200;
+  box-shadow: 0 0 5px 2px #9f6200;
 }
 
 .check-out:hover > span::after {
