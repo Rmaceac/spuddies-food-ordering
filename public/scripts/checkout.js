@@ -39,24 +39,34 @@ $(() => {
         $remove.hide();
 
         // ADD LOADING BAR
-        $stageOne = $('<div class="progress"><div class="stageOne progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div><p class="loading-text">Order Received</p>');
+        $stageOne = $('<div class="progress"><div class="stageOne progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>');
+        $received = $('<p>Order received</p>')
+        $('.loading-text').append($received);
         $('.loading-bar').append($stageOne);
         setTimeout( () => {
-          $stageTwo = $('<div class="progress"><div class="stageTwo progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div><p class="loading-text">Potato sponge bath</p>');
+          $stageTwo = $('<div class="progress"><div class="stageTwo progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>');
+          $bath = $('<p>Potato sponge bath</p>');
+          $('.loading-text').append($bath);
           $('.loading-bar').append($stageTwo);
+          $received.hide();
           $stageOne.hide();
         }, 3000)
         setTimeout( () => {
-          $stageThree = $('<div class="progress"><div class="stageThree progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div><p class="loading-text">Assembling your order</p>');
+          console.log("Stage Three");
+          $stageThree = $('<div class="progress"><div class="stageThree progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>');
+          $package = $('<p>Packaging your order</p>');
+          $('.loading-text').append($package);
           $('.loading-bar').append($stageThree);
-          $stageOne.hide();
+          $bath.hide();
           $stageTwo.hide();
         }, 4000)
         setTimeout( () => {
-          $stageFour = $('<div class="progress"><div class="stageFour progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div><p class="loading-text">Order ready for pick-up!</p>');
+          console.log("Stage Four");
+          $stageFour = $('<div class="progress"><div class="stageFour progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>');
+          $ready = $('<p>Your order is ready for pick-up!</p>');
+          $('.loading-text').append($ready);
           $('.loading-bar').append($stageFour);
-          $stageOne.hide();
-          $stageTwo.hide();
+          $package.hide();
           $stageThree.hide();
         }, 5000);
       });

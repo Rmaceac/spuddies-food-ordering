@@ -38,7 +38,7 @@
 }
 .progress .stageFour {
   height: 20px;
-  animation: loading-bar-four 1.0s;
+  animation: loading-bar-four 2.0s;
 }
 @keyframes loading-bar-one {
   from  {width: 0px;}
@@ -56,7 +56,6 @@
   from  {width: 600px;}
   to {width: 800px;}
 }
-
 .loading-text {
   text-align: center;
 }
