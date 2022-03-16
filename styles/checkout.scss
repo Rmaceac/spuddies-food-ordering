@@ -1,5 +1,5 @@
 .spinner {
-  font-size: 500%;
+  font-size: 300%;
   animation: spin-animation 1.0s 4000;
 }
 
@@ -14,7 +14,11 @@
 
 .check-out {
   align-self: center;
-  width: 30%;
+  width: fit-content;
+}
+
+.prep {
+  font-size: 24px;
 }
 
 .received-container {

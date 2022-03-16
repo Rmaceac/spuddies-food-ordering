@@ -9,7 +9,7 @@ $(() => {
     //SET TIMEOUT & ADD SPINNER
     setTimeout(checkout, 2000);
     $potato = $('<p class="spinner">🥔</p>');
-    $prepareOrder = $('<p>Preparing your order...</p>');
+    $prepareOrder = $('<p class="prep">Preparing your order...</p>');
     $('.check-out').text('');
     $('.check-out').append($prepareOrder, $potato);
 
