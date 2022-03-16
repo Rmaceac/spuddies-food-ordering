@@ -6,8 +6,8 @@ INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Stuffed Potato Burger', 'burger', 13.00, 'A burger inside a burger, wow.', './images/potato-skin-burger.jpeg');
 
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Thinly-Sliced Potatos', 'side', 4.00, 'Pretty much exactly what it sounds like.', './images/thinly-sliced-potatoes.jpg');
-INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Crunchy Chips', 'side', 3.00, 'Thinly sliced, but fried a bit differently so theyre crunchy', './chips.jpg');
-INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Potato Salad', 'side', 5.50, 'Healthy potato side with tons of mayo.', './images/potato-salad.jpeg');
+INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Crunchy Chips', 'side', 3.00, 'Thinly sliced, but fried a bit differently so theyre crunchy', './images/chips.jpg');
+INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Potato Salad', 'side', 5.50, 'Healthy potato side with tons of mayo.', './images/potato-salad.jpg');
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Potato Rings', 'side', 5.25, 'Like potato donuts, kind of...', './images/potato-rings.jpg');
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Mystery Potato Monstrosity', 'side', 9.00, 'We have no idea what this is. We just found it on the internet.', './images/weird-potato.jpg');
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Just Potatoes', 'side', 4.00, 'Theyre everywhere, please help and take some with you.', './images/potatoes.jpg');
