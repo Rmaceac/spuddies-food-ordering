@@ -1,7 +1,7 @@
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Spud Burger', 'burger', 11.00, 'Our classic potato burger!', './images/spud-burger.jpg');
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Mashed Tater Burger', 'burger', 9.00, 'Our classic potato burger... mashed!', './images/mashed-tater-burger.jpeg' );
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Potato Skin Burger', 'burger', 7.00, 'A modern take on our classic.', './images/potato-skin-burger.jpeg');
-INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Fried Potato Sandwich', 'burger', 6.50, 'Grilled cheese with potato.', './images/potato-skin-burger.jpeg');
+INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Fried Potato Sandwich', 'burger', 6.50, 'Grilled cheese with potato.', './images/grilled-cheese.jpg');
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Potato Wrap', 'burger', 9.00, 'Not exactly a burger, but this thing has potatos for days!', './images/wrap.jpg');
 INSERT INTO menu_items (item, type, price, description, thumbnail_url) VALUES ('Stuffed Potato Burger', 'burger', 13.00, 'A burger inside a burger, wow.', './images/stuffed-burger.jpg');
 
