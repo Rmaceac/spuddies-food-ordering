@@ -126,7 +126,7 @@ const renderMenu = (menuItems, filter) => {
         $('.carousel-inner').append($carouselRow);
       }
     }
-    
+
   }
 
   // If items didn't fully fill a row, add the partial row
@@ -193,9 +193,9 @@ const renderItem = (itemObj) => {
         <img id=${itemObj.id} class="item" src="${itemObj.thumbnail_url}">
       </div>
       <div class="flip-box-back">
-        <h3>${itemObj.item}</h2>
-        <p>${itemObj.description}</p>
-        <h3>${itemObj.price}</h3>
+        <h3 class="item-name">${itemObj.item}</h2>
+        <p class="item-description">${itemObj.description}</p>
+        <h3 class="item-price">$${itemObj.price}</h3>
       </div>
     </div>
   </div>

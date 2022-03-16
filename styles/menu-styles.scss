@@ -10,7 +10,20 @@
   transform: scale(.8);
   transition-duration: 0.4s;
   border-radius: 10px;
-  box-shadow: 1px 1px rgb(99, 97, 97), 0em 0 1.4em rgb(128, 128, 125);;
+  box-shadow: 1px 1px rgb(99, 97, 97), 0em 0 1.4em rgb(128, 128, 125);
+  font-family: 'Indie Flower', cursive;
+}
+
+.item-name {
+  font-family: 'Acme', sans-serif;
+}
+.item-description {
+  font-family: 'Indie Flower', cursive;
+  padding: 5px;
+  font-size: 25px;
+}
+.item-price {
+  font-family: 'Acme', sans-serif;
 }
 
 .chat {
@@ -39,7 +52,7 @@
 }
 
 .flip-box:hover .flip-box-inner {
-  transition-delay: 500ms;
+  transition-delay: 300ms;
   transform: rotateY(180deg);
 }
 
