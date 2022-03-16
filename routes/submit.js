@@ -26,25 +26,37 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
     console.log("Order received");
-    orderSubmitted();
+    // orderSubmitted();
   });
 
   router.post("/order", (req, res) => {
     console.log("Post request made to /api/submit/order");
     console.log(`Req.body: ${req.body.getOrder}`);
-
+    
+    let total = 0;
     for (const item of req.body.getOrder) {
       console.log("Item:", item);
+      total += Number(item.subtotal);
     }
+    console.log("Total:", total);
+    const orderItems = req.body.getOrder;
+    const menu_items_id = orderItems[0].id;
+    const quantity = orderItems[0].quantity;
+    const subtotal = orderItems[0].subtotal;
 
-  //   const queryString = ` INSERT INTO orders (user_id, total_price) VALUES (2, $1);
-  //   INSERT INTO order_items (order_id, menu_items_id, quantity, sub_total) VALUES (1, $2, $3, $4);`;
-  //   const params = "";
 
-  //   db.query(queryString, params)
-  //     .then(data => {
-  //       console.log("Order submitted to database");
-  //     });
+    const queryString = `INSERT INTO orders (user_id, total_price) VALUES (2, $1);
+    INSERT INTO order_items (order_id, menu_items_id, quantity, sub_total) VALUES (1, $2, $3, $4);`
+    const params = [total, menu_items_id, quantity, subtotal]
+
+    db.query(queryString, params)
+      .then(data => {
+        console.log("Order submitted to database");
+        db.query("SELECT * FROM orders;")
+          .then(data => {
+            console.log(`Data retrieval: ${data.rows}`);
+          })
+      });
   });
 
   return router;
