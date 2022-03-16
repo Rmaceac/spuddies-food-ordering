@@ -59,9 +59,13 @@
   from  {width: 600px;}
   to {width: 800px;}
 }
-.loading-text {
+.loading-text > p {
   text-align: center;
+  background-color: #ffffffcf;
+  padding: 5px;
+  border-radius: 10px;
 }
+
 .loading-text > h3 {
   background-color: #ffffffcf;
   padding: 10px;
