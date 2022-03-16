@@ -1,6 +1,7 @@
 body {
   display: flex;
   justify-content: center;
+  background-color: aqua;
 }
 
 main {
@@ -8,7 +9,8 @@ main {
   flex-direction: column;
   border: 1px solid black;
   box-shadow: 5px 10px #888888;
-  width: 800px;
+  width: 80vw;
+  height: 100vh;
 }
 
 .nav{
@@ -21,7 +23,6 @@ main {
 .header {
   display: flex;
   justify-content: space-between;
-  // background-image: url("https://cdn.pixabay.com/photo/2020/01/30/16/19/potato-4805842_960_720.jpg");
   background-color: lightblue;
   padding: 10px;
 }
@@ -155,7 +156,7 @@ h5 {
   } 50% {
     transform: translateX(-5px);
   } 100% {
-    transform: translateX(0);    
+    transform: translateX(0);
   }
 }
 
@@ -165,7 +166,7 @@ h5 {
   } 50% {
     transform: translateX(5px);
   } 100% {
-    transform: translateX(0);    
+    transform: translateX(0);
   }
 }
 
