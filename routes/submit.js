@@ -26,7 +26,7 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
     console.log("Order received");
-    orderSubmitted();
+    // orderSubmitted();
   });
 
   router.post("/order", (req, res) => {
