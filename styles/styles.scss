@@ -13,25 +13,41 @@ main {
 .nav{
   display: flex;
   justify-content: flex-end;
-  padding: 10px;
+  padding: 20px;
   background-color: lightblue;
+  // opacity: 70%;
+}
+.current-user {
+  margin: 0px;
+  padding: 0px;
 }
 .header {
   display: flex;
-  justify-content: space-between;
-  background-color: lightblue;
+  justify-content: center;
+  align-items: flex-end;
   padding: 10px;
+  background-image: URL('https://thumbs.dreamstime.com/b/pile-potatoes-burlap-sack-background-30139847.jpg');
+  background-size: 100vw 74vh;
+}
+.restaurant-title {
+  position: absolute;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  font-size: 3.8rem;
 }
 .logo {
   width: 20%;
+  margin-right: 30vw;
+  align-content: flex-start;
+  position: relative;
 }
 button {
   font-family: 'Acme', sans-serif;
   color: white;
   border: none;
   cursor: pointer;
-  margin: 10px;
-  padding: 10px;
+  margin: 0px 5px 10px;
+  padding: 5px 10px;
   border-radius: 6px;
 //   background-color: #8c8c17;
 // background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
@@ -46,15 +62,22 @@ button {
   display: flex;
   flex-direction: column;
   padding: 25px;
+
   height: 50vh;
-  background-color: lightgreen;
+  border: 4px solid rgb(190, 158, 115);
+  background-color: burlywood;
+  background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
+
 }
 
 .order-container-receipt {
   display: flex;
   flex-direction: column;
   padding: 25px;
+
   height: 50vh;
+  border: 2px solid rgb(12, 11, 10);
+
   background-color: #f5f5f5;
   background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");
 }
