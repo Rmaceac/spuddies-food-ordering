@@ -48,12 +48,12 @@ $(() => {
 
         // ADD LOADING BAR
         $stageOne = $('<div class="progress"><div class="stageOne progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>');
-        $received = $('<p>We have received your order</p>')
+        $received = $('<p class="loading">We have received your order</p>')
         $('.loading-text').append($received);
         $('.loading-bar').append($stageOne);
         setTimeout( () => {
           $stageTwo = $('<div class="progress"><div class="stageTwo progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>');
-          $bath = $('<p>Potato sponge bath</p>');
+          $bath = $('<p class="loading">Potato sponge bath</p>');
           $('.loading-text').append($bath);
           $('.loading-bar').append($stageTwo);
           $received.hide();
@@ -61,7 +61,7 @@ $(() => {
         }, 3000)
         setTimeout( () => {
           $stageThree = $('<div class="progress"><div class="stageThree progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>');
-          $assemble = $('<p>Potato assembly</p>');
+          $assemble = $('<p class="loading">Potato assembly</p>');
           $('.loading-text').append($assemble);
           $('.loading-bar').append($stageThree);
           $bath.hide();
@@ -69,7 +69,7 @@ $(() => {
         }, 4000)
         setTimeout( () => {
           $stageFour = $('<div class="progress"><div class="stageFour progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>');
-          $package = $('<p>Packaging your order</p>');
+          $package = $('<p class="loading">Packaging your order</p>');
           $('.loading-text').append($package);
           $('.loading-bar').append($stageFour);
           $assemble.hide();
