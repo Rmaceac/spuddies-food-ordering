@@ -9,7 +9,6 @@ main {
   border: 1px solid black;
   box-shadow: 5px 10px #888888;
   width: 800px;
-
 }
 
 .nav{
@@ -22,8 +21,13 @@ main {
 .header {
   display: flex;
   justify-content: space-between;
+  // background-image: url("https://cdn.pixabay.com/photo/2020/01/30/16/19/potato-4805842_960_720.jpg");
   background-color: lightblue;
   padding: 10px;
+}
+
+.logo {
+  width: 20%;
 }
 
 /* ORDER CSS */
@@ -69,6 +73,14 @@ main {
   flex-direction: column;
   padding: 20px;
   background-color: lightcyan;
+  background: url("https://cdn.pixabay.com/photo/2020/01/30/16/19/potato-4805842_960_720.jpg") no-repeat top center;
+  // height: 100vh;
+  // position: relative;
+  // background-size: 100%;
+  // position: fixed;
+  // top: 0px;
+  // width: 100%;
+  z-index: 1;
 }
 
 h2 {
@@ -103,8 +115,58 @@ h5 {
 }
 
 #next, #previous {
-  opacity: 2;
+
+  opacity: 1;
   transform: scale(2);
+  width: fit-content;
+  height: fit-content;
+  margin: auto 0;
+}
+
+.carousel-control-next-icon {
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-prev-icon {
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon:hover {
+  cursor: pointer;
+  animation-name: pointerRight;
+  animation-iteration-count: infinite;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+}
+
+.carousel-control-prev-icon:hover {
+  cursor: pointer;
+  animation-name: pointerLeft;
+  animation-iteration-count: infinite;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pointerLeft {
+  0% {
+    transform: translateX(0);
+  } 50% {
+    transform: translateX(-5px);
+  } 100% {
+    transform: translateX(0);    
+  }
+}
+
+@keyframes pointerRight {
+  0% {
+    transform: translateX(0);
+  } 50% {
+    transform: translateX(5px);
+  } 100% {
+    transform: translateX(0);    
+  }
 }
 
 /* Footer CSS */
@@ -114,4 +176,5 @@ h5 {
   justify-content: space-between;
   padding: 25px;
   background-color: lightblue;
+  opacity: 60%;
 }

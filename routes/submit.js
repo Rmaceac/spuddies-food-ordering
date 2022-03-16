@@ -12,9 +12,11 @@ const router  = express.Router();
 
 module.exports = (db) => {
   // Full route './api/submit/'
+
   router.post("/eta", (req, res) => {
     const eta = req.body.eta;
     orderEstimate(eta);
+
     res.send("Notification Sent");
 
     const time = Number(eta.slice(0, 2));

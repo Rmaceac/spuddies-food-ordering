@@ -15,7 +15,7 @@ const currentOrder = {
     name: "potato icecream",
     price: 12.00,
     quantity: 2
-  }  
+  }
 }
 
 localStorage.setItem('currentOrder', JSON.stringify(currentOrder));
