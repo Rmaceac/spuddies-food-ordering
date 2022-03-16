@@ -43,7 +43,17 @@ button {
   display: flex;
   flex-direction: column;
   padding: 25px;
+  height: 40vh;
   background-color: lightgreen;
+}
+
+.order-container-receipt {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  height: 40vh;
+  background-color: #f5f5f5;
+  background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");
 }
 
 .order-title {
@@ -60,8 +70,9 @@ button {
 
 .orderTotalContainer {
   text-align: center;
-  width: 100px;
-  margin: auto;
+  align-self: flex-end;
+  width: 200px;
+  margin-right: 20%;
   font-size: 1.5rem;
   padding: 0.25rem 0.25rem;
   border: 2px solid black;
@@ -78,15 +89,9 @@ button {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  // background-color: lightcyan;
   background: url("https://cdn.pixabay.com/photo/2020/01/30/16/19/potato-4805842_960_720.jpg") no-repeat top center;
-  // height: 100vh;
-  // position: relative;
-  background-size: 100%;
+  background-size: 100vh 60vw;
   padding: 100px 20px;
-  // position: fixed;
-  // top: 0px;
-  // width: 100%;
   z-index: 1;
 }
 
