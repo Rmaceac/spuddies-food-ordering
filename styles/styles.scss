@@ -9,7 +9,6 @@ main {
   // border: 1px solid black;
   // box-shadow: 5px 10px #888888;
   width: 80vw;
-  height: 100vh;
 }
 .nav{
   display: flex;
@@ -72,6 +71,20 @@ button {
   text-align: center;
 }
 
+td > button {
+  margin: 0;
+  padding: 0 10px;
+  line-height: 20px;
+}
+
+.add {
+  border-radius: 6px 15px 15px 6px;
+}
+
+.minus {
+  border-radius: 15px 6px 6px 15px;
+}
+
 .orderTotalContainer {
   text-align: center;
   align-self: flex-end;
@@ -94,7 +107,7 @@ button {
   flex-direction: column;
   padding: 20px;
   background: url("https://cdn.pixabay.com/photo/2020/01/30/16/19/potato-4805842_960_720.jpg") no-repeat top center;
-  background-size: 100vh 60vw;
+  background-size: 100vw 74vh;
   padding: 100px 20px;
   z-index: 1;
 }

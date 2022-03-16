@@ -20,8 +20,8 @@ module.exports = (db) => {
     res.send("Notification Sent");
 
     const time = Number(eta.slice(0, 2));
-    setTimeout(
-      orderReadyMsg, time * 1000);
+    // setTimeout(
+    //   orderReadyMsg, time * 1000);
   });
 
   router.get("/", (req, res) => {
