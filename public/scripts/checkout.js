@@ -44,7 +44,7 @@ $(() => {
 
         // DISPLAY RECEIPT
         $orderContainer = $('.order-container');
-        console.log($orderContainer);
+        // console.log($orderContainer);
         $orderContainer.removeClass();
         $orderContainer.addClass('order-container-receipt');
 
