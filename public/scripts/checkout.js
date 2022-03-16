@@ -1,6 +1,7 @@
 
 $(() => {
 
+
   const $submit = $('.check-out');
   const $menuContainer = $('.menu-container')
 
@@ -38,6 +39,12 @@ $(() => {
         $minus.hide();
         $remove.hide();
         $submit.hide();
+
+        // DISPLAY RECEIPT
+        $orderContainer = $('.order-container');
+        console.log($orderContainer);
+        $orderContainer.removeClass();
+        $orderContainer.addClass('order-container-receipt');
 
         // ADD LOADING BAR
         $stageOne = $('<div class="progress"><div class="stageOne progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>');
