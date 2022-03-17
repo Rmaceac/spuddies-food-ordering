@@ -32,6 +32,6 @@ const orderSubmitted = () => {
       to: process.env.PHONE
     })
     .then(message => console.log(message.status));
-}
+};
 
 module.exports = {orderReadyMsg, orderEstimate, orderSubmitted};

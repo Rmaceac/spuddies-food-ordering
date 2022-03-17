@@ -15,18 +15,18 @@ module.exports = (db) => {
 
   router.post("/eta", (req, res) => {
     const eta = req.body.eta;
-    // orderEstimate(eta);
+    orderEstimate(eta);
 
     res.send("Notification Sent");
 
     const time = Number(eta.slice(0, 2));
-    // setTimeout(
-    //   orderReadyMsg, time * 1000);
+    setTimeout(
+      orderReadyMsg, time * 1000);
   });
 
   router.get("/", (req, res) => {
     console.log("Order received");
-    // orderSubmitted();
+    orderSubmitted();
   });
 
   router.post("/order", (req, res) => {
@@ -41,7 +41,7 @@ module.exports = (db) => {
     // console.log("Total:", total);
 
     let promises = [];
-    let params = []
+    let params = [];
     db.query(queryStringTotal, [total])
       .then(data => {
         console.log(`Retrieving Order ID: ${data.rows[0].id}`);
