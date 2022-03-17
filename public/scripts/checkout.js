@@ -48,6 +48,10 @@ $(() => {
         $orderContainer.removeClass();
         $orderContainer.addClass('order-container-receipt');
 
+        // CHANGE ORDER TITLE TO "RECEIPT"
+        $orderTitle = $('.order-title');
+        $orderTitle.text("RECEIPT");
+
         // ADD LOADING BAR
         $stageOne = $('<div class="progress"><div class="stageOne progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>');
         $received = $('<p>We have received your order</p>')
@@ -85,4 +89,7 @@ $(() => {
       });
     }
   });
+
+
+
 });
