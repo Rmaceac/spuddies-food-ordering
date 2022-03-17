@@ -31,19 +31,29 @@ module.exports = (db) => {
 
   router.post("/order", (req, res) => {
     console.log("Post request made to /api/submit/order");
-    console.log(`Req.body: ${req.body.getOrder}`);
+    // console.log(`Req.body: ${req.body.getOrder}`);
+
+    const queryStringTotal = `INSERT INTO orders (user_id, total_price) VALUES (2, $1);`;
+    const orderItem = `INSERT INTO order_items (order_id, menu_items_id, quantity, sub_total) VALUES (1, $1, $2, $3);`;
+
+    // calculates total of each subtoal of each item
+    const total = req.body.getOrder.reduce((a,c) => Number(a) + Number(c.subtotal), 0);
+    // console.log("Total:", total);
+
+    let promises = [];
+    promises.push(db.query(queryStringTotal, [total])
+    );
 
     for (const item of req.body.getOrder) {
-      console.log("Item:", item);
+      // console.log("Item:", item);
+      const params = [item.id, item.quantity, item.subtotal];
+      promises.push(db.query(orderItem, params)
+      );
     }
 
-    const queryString = ` INSERT INTO orders (user_id, total_price) VALUES (2, $1);
-    INSERT INTO order_items (order_id, menu_items_id, quantity, sub_total) VALUES (1, $2, $3, $4);`;
-    const params = "";
-
-    db.query(queryString, params)
+    Promise.all(promises)
       .then(data => {
-        console.log("Order submitted to database");
+        console.log("Promise.all:", data);
       });
   });
 
