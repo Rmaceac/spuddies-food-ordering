@@ -107,7 +107,7 @@ $(() => {
   const addOrderItem = (object) => {
     const $orderItem = $(`
       <tr id="${object.name}">
-        <td class="order-item">${object.name}</td>
+        <td>${object.name}</td>
         <td><button class="minus">-</button><input class='quantity' type="text" value="${object.quantity}" min="1" max="9" /><button class="add">+</button></td>
         <td>$${object.price}</td>
         <td>$${(object.price * object.quantity).toFixed(2)}</td>
