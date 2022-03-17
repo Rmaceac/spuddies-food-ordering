@@ -16,6 +16,7 @@ $(() => {
     $('.check-out').append($prepareOrder, $potato);
 
     // REPLACE SUBMIT WITH ORDER CONFIRMATION
+    /*eslint-disable*/
     function checkout() {
     $.ajax('checkout.html', { method: 'GET' })
     .then(function (checkout) {
@@ -89,7 +90,7 @@ $(() => {
       });
     }
   });
-
+  /*eslint-enable*/
 
 
 });
