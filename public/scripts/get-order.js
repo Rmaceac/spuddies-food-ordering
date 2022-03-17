@@ -15,8 +15,8 @@ $(() => {
       $orderEntries.append(newItem);
     }
 
-    const date = String(order[0].order_time).slice(0, 9);
-    const time = String(order[0].order_time).slice(14, 22);
+    const date = String(order[0].order_time).slice(0, 10);
+    const time = String(order[0].order_time).slice(11, 22);
     
     const $total = $(`
       <tr class="restaurant">
