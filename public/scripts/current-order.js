@@ -134,7 +134,6 @@ $(() => {
           $('.carousel-inner').append($carouselRow);
         }
       }
-
     }
 
     // If items didn't fully fill a row, add the partial row
@@ -157,7 +156,7 @@ $(() => {
       // If item not in dataOrder, add it
       if (!checkIfExists) {
         dataOrder.push({
-          id: genID++,
+          id: itemData.id,
           name: itemData.item,
           quantity: 1,
           price: Number(itemData.price),
