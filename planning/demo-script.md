@@ -38,9 +38,11 @@ Person 3 (Restaurant owner): Introduce the web page. Set the scene. "This is the
 
 4. Bow. Accept praise from lessers.
 
-## Credits
+## Leads
 Ryan - Database and API
-Travis - Front-End design and 
+Travis - Front-End design and functionality
 Dylan - Backend
+Lots of pair + trio programming. Lots learned!
 
-##Challenges
+## Challenges
+
