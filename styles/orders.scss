@@ -2,12 +2,48 @@ main {
   font-family: 'Indie Flower', cursive;
 }
 
+#eta-confirmed {
+  display: flex;
+  justify-content: end;
+}
+
 #owner-options {
   display: flex;
+  justify-content: center;
 }
 
 .owner-input {
   width: 300px;
   margin: 1em;
   background-color: white;
+  border: 1px solid;
+}
+
+.orders-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.owner-button {
+  font-family: 'Acme', sans-serif;
+  width: fit-content;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0;
+  padding-left: 35px;
+  padding-right: 15px;
+  transition: 0.3s;
+}
+
+.owner-button span {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.owner-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 2px #9f6200;
 }

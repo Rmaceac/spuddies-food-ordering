@@ -19,11 +19,14 @@
   <link rel="stylesheet" href="../styles/order-styles.css">
   <link rel="stylesheet" href="../styles/menu-styles.css">
   <link rel="stylesheet" href="../styles/checkout.css">
+  <link rel="stylesheet" href="../styles/orders.css">
 
   <!-- JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
 
+<!-- Custom Scripts -->
   <script src="/scripts/give-eta.js" defer></script>
+  <script src="/scripts/get-order.js" defer></script>
 
   <title>Restaurant POV</title>
 </head>
@@ -36,20 +39,23 @@
   <div class="nav">
     <button>ABOUT</button>
     <button>STORE LOCATOR</button>
-    <button>CONTACT US</button>
+    <div class="logged-in">
+      <div class="current-user">Hello, Proprietor</div>
+      <button>CONTACT US</button>
+      <button>LOGOUT</button>
+  </div>
   </div>
 
 <!-- HEADER -->
   <header class="header">
     <img class="logo" src="./images/potato.png" alt="">
-    <h1>RESTAURANT NAME</h1>
-    <div class="current-user">Hello, Proprietor</div>
+    <h1 class="restaurant-title">RESTAURANT NAME</h1>
   </header>
 
 <!-- ORDER CONTAINER -->
   <section class="order-container">
     <h2 class="order-title">ORDERS</h2>
-    <!-- <table>
+    <table>
       <thead>
         <tr>
           <th>ITEM</th>
@@ -60,20 +66,22 @@
         </tr>
       </thead>
       <tbody class="order-entries"></tbody>
-    </table> -->
+    </table>
 
     <!-- <p class="orderTotalContainer">Total: <span id="orderTotal">$0.00</span></p> -->
 
-    <div>
-      <form action="/orders/fetch" method="GET" >
+    <!-- INSERT DATABASE INFO HERE -->
+
+    <div id="owner-options">
+      <form action="/orders/:id" method="GET" >
         <label></label>
-        <input placeholder="Enter Order ID" type="text" style="width: 300px; margin: 1em; background-color: white;">
-        <button type="submit" >FETCH ORDER</button>
+        <input class="owner-input" placeholder="Enter Order ID" id="fetch" type="text">
+        <button class="owner-button" type="submit" id="fetch-order">FETCH ORDER</button>
       </form>
       <form action="api/submit/eta" method="POST">
         <label></label>
-        <input placeholder="Estimated time until order ready" id="estimate" type="text" style="width: 300px; margin: 1em; background-color: white">
-        <button id="eta" type="submit" >SEND ETA</button>
+        <input class="owner-input" placeholder="Estimated time until order ready" id="estimate" type="text">
+        <button id="eta" class="owner-button" type="submit" >SEND ETA</button>
       </form>
     </div>
   </section>
