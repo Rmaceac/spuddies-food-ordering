@@ -7,6 +7,7 @@ $(() => {
   const $orderEntries = $('.order-entries');
   const $orderTotal = $('#orderTotal');
   const $submitBtn = $('.check-out');
+  const $orderContainer = $('#order');
 
   // REMOVE ORDER ITEM
   const addRemoveBtnListener = (removeBtn) => {
@@ -74,8 +75,12 @@ $(() => {
     // Disable submit button unless more then one item
     if ($submitBtn.is(':disabled') && order.length > 0) {
       $submitBtn.prop('disabled', false);
+      $orderContainer.removeClass("order-container-disabled");
+      $orderContainer.addClass("order-container-enabled");
     } else if (order.length === 0) {
       $submitBtn.prop('disabled', true);
+      $orderContainer.removeClass("order-container-enabled");
+      $orderContainer.addClass("order-container-disabled re-disabled");
     }
 
     for (const item of order) {

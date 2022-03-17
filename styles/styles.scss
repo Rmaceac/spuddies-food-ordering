@@ -73,14 +73,26 @@ button:hover {
   border: 4px solid rgb(190, 158, 115);
   background-color: burlywood;
   background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
+}
 
+.re-disabled {
+  animation-name: slideUp;
+  animation-fill-mode: forwards;
+  animation-duration: 750ms;
+}
+
+@keyframes slideUp {
+  from {
+    height: 50vh;
+  } to {
+    height: 20vh;
+  }
 }
 
 .order-container-enabled {
   display: flex;
   flex-direction: column;
   padding: 25px;
-  // height: 20vh;
   border: 4px solid rgb(190, 158, 115);
   background-color: burlywood;
   background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
