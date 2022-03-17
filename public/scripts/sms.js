@@ -24,10 +24,10 @@ const orderEstimate = (estimate) => {
     .then(message => console.log(message.status));
 };
 
-const orderSubmitted = () => {
+const orderSubmitted = (orderID) => {
   client.messages
     .create({
-      body: 'Someone has submitted an order!',
+      body: `Someone has submitted an order! Order ID: ${orderID}`,
       from: '+18455813733',
       to: process.env.PHONE
     })
