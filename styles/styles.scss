@@ -159,7 +159,7 @@ td > button {
 }
 .submit-total-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   justify-content: space-evenly;
 }
 
