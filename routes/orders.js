@@ -23,7 +23,7 @@ module.exports = (db) => {
     JOIN menu_items ON menu_items.id = menu_items_id
     WHERE order_id = $1;`, [orderID])
       .then(data => {
-        console.log("DATA:", data);
+        // console.log("DATA:", data);
         const checkout = data.rows;
         res.json(checkout);
       })

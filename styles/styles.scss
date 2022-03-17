@@ -156,11 +156,27 @@ td > button {
   padding-right: 15px;
   transition: 0.3s;
 }
+
+.check-out:disabled {
+  background-color: #f5f5f5;
+}
+
+.check-out:disabled:hover {
+  transform: scale(1);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.check-out:disabled:hover > span {
+  cursor: not-allowed;
+}
+
 .check-out span {
   cursor: pointer;
   font-size: 20px;
   transition: 0.5s;
 }
+
 //THIS STYLE ISN'T WORKING?
 span::after{
   content: ' > >';
@@ -177,14 +193,18 @@ span::after{
 }
 
 .check-out:hover > span::after {
-  transform: scale(4);
+  // transform: scale(4);
   opacity: 1;
   right: -5px;
 }
 
-.check-out:disabled {
-  background-color: #f5f5f5;
+.check-out:disabled > span::after {
+  // transform: scale(4);
+  opacity: 0;
+  right: -5px;
 }
+
+
 
 h2, h5 {
   text-align: center;
@@ -229,12 +249,12 @@ th {
 }
 
 #next, #previous {
-
   opacity: 1;
   transform: scale(2);
   width: fit-content;
   height: fit-content;
   margin: auto 0;
+  box-shadow: none;
 }
 
 .carousel-container {
