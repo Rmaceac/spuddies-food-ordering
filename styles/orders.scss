@@ -16,3 +16,27 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+.owner-button {
+  font-family: 'Acme', sans-serif;
+  width: fit-content;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0;
+  padding-left: 35px;
+  padding-right: 15px;
+  transition: 0.3s;
+}
+
+.owner-button span {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.owner-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 2px #9f6200;
+}
