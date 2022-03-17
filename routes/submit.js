@@ -41,7 +41,7 @@ module.exports = (db) => {
     // console.log("Total:", total);
 
     let promises = [];
-    let params = []
+    let params = [];
     db.query(queryStringTotal, [total])
       .then(data => {
         console.log(`Retrieving Order ID: ${data.rows[0].id}`);
