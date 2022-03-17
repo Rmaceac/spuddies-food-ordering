@@ -72,12 +72,10 @@ $(() => {
     $orderEntries.empty();
 
     // Disable submit button unless more then one item
-    if ($submitBtn.hasClass('hideSubmit') && order.length > 0) {
-      $submitBtn.removeClass('hideSubmit');
-      $submitBtn.addClass('check-out');
+    if ($submitBtn.is(':disabled') && order.length > 0) {
+      $submitBtn.prop('disabled', false);
     } else if (order.length === 0) {
-      $submitBtn.removeClass('check-out');
-      $submitBtn.addClass('hideSubmit');
+      $submitBtn.prop('disabled', true);
     }
 
     for (const item of order) {
