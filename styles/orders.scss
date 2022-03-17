@@ -2,14 +2,21 @@ main {
   font-family: 'Indie Flower', cursive;
 }
 
+#eta-confirmed {
+  display: flex;
+  justify-content: end;
+}
+
 #owner-options {
   display: flex;
+  justify-content: center;
 }
 
 .owner-input {
   width: 300px;
   margin: 1em;
   background-color: white;
+  border: 1px solid;
 }
 
 .orders-section {

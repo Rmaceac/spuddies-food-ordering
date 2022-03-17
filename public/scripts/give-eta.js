@@ -23,6 +23,8 @@ $(() => {
         console.log("Error: ", err);
       });
 
+    $estimate.val('ETA message sent succesfully!');
+
   });
 
 });
