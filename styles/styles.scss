@@ -65,16 +65,36 @@ button:hover {
 }
 
 /* ORDER CSS */
-.order-container {
+.order-container-disabled {
   display: flex;
   flex-direction: column;
   padding: 25px;
-
-  height: 50vh;
+  height: 20vh;
   border: 4px solid rgb(190, 158, 115);
   background-color: burlywood;
   background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
 
+}
+
+.order-container-enabled {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  // height: 20vh;
+  border: 4px solid rgb(190, 158, 115);
+  background-color: burlywood;
+  background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
+  animation-name: slideDown;
+  animation-fill-mode: forwards;
+  animation-duration: 750ms;
+}
+
+@keyframes slideDown {
+  from {
+    height: 20vh;
+  } to {
+    height: 50vh;
+  }
 }
 
 .order-container-receipt {
