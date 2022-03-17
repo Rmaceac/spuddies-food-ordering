@@ -51,13 +51,13 @@
   animation: loading-bar-one 3.0s;
 }
 .progress .stageTwo {
-  animation: loading-bar-two 1.0s;
+  animation: loading-bar-two 7.0s;
 }
 .progress .stageThree {
-  animation: loading-bar-three 1.0s;
+  animation: loading-bar-three 5.0s;
 }
 .progress .stageFour {
-  animation: loading-bar-four 2.0s;
+  animation: loading-bar-four 5.0s;
 }
 @keyframes loading-bar-one {
   from  {width: 0px;}

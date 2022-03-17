@@ -73,7 +73,7 @@ $(() => {
           $('.loading-bar').append($stageThree);
           $bath.hide();
           $stageTwo.hide();
-        }, 4000)
+        }, 7000)
         setTimeout( () => {
           $stageFour = $('<div class="progress"><div class="stageFour progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>');
           $package = $('<p>Packaging your order</p>');
@@ -81,12 +81,12 @@ $(() => {
           $('.loading-bar').append($stageFour);
           $assemble.hide();
           $stageThree.hide();
-        }, 5000);
+        }, 10000);
         setTimeout( () => {
           $ready = $('<h3>Your order has been submitted!</h3>');
           $('.loading-text').append($ready);
           $package.hide();
-        }, 7000);
+        }, 15000);
       });
     }
   });
