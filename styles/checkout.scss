@@ -52,12 +52,15 @@
 }
 .progress .stageTwo {
   animation: loading-bar-two 7.0s;
+  // animation-play-state: paused;
 }
 .progress .stageThree {
   animation: loading-bar-three 5.0s;
+  // animation-play-state: paused;
 }
 .progress .stageFour {
   animation: loading-bar-four 5.0s;
+  // animation-play-state: paused;
 }
 @keyframes loading-bar-one {
   from  {width: 0px;}

@@ -205,6 +205,19 @@ td > button {
 .minus {
   border-radius: 15px 6px 6px 15px;
 }
+input {
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  width: 30px;
+  padding: 10px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
 .submit-total-container {
   display: flex;
   flex-direction: row-reverse;
