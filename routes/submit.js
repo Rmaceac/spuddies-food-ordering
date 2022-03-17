@@ -37,14 +37,14 @@ module.exports = (db) => {
       console.log("Item:", item);
     }
 
-    //   const queryString = ` INSERT INTO orders (user_id, total_price) VALUES (2, $1);
-    //   INSERT INTO order_items (order_id, menu_items_id, quantity, sub_total) VALUES (1, $2, $3, $4);`;
-    //   const params = "";
+    const queryString = ` INSERT INTO orders (user_id, total_price) VALUES (2, $1);
+    INSERT INTO order_items (order_id, menu_items_id, quantity, sub_total) VALUES (1, $2, $3, $4);`;
+    const params = "";
 
-  //   db.query(queryString, params)
-  //     .then(data => {
-  //       console.log("Order submitted to database");
-  //     });
+    db.query(queryString, params)
+      .then(data => {
+        console.log("Order submitted to database");
+      });
   });
 
   return router;
