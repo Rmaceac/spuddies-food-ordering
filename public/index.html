@@ -67,20 +67,24 @@
           <th>QUANTITY</th>
           <th>PRICE($/ITEM)</th>
           <th>TOTAL/ITEM</th>
-          <th><p class="orderTotalContainer">Total: <span id="orderTotal">$0.00</span></p></th>
         </tr>
       </thead>
       <tbody class="order-entries"></tbody>
-
     </table>
 
-    <!-- <form method='POST' action="/api/checkout" > -->
+    <div class="submit-total-container">
+      <p class="orderTotalContainer"><span class="total-cost">TOTAL COST:</span><span id="orderTotal">$0.00</span></p>
+      <!-- <form method='POST' action="/api/checkout" > -->
 
       <button type="submit" class="check-out"><span>SUBMIT ORDER</span></button>
 
-    <!-- </form> -->
+      <!-- </form> -->
 
+    </div>
   </section>
+
+
+
 
 <!--  MENU HEADER -->
   <section class="menu-container">
