@@ -16,14 +16,17 @@ $(() => {
     }
 
     const date = String(order[0].order_time).slice(0, 9);
-    const time = String(order[0].order_time).slice(14, 12);
+    console.log("🚀 ~ file: get-order.js ~ line 19 ~ renderOrder ~ date", date)
+    const time = String(order[0].order_time).slice(14, 22);
+    console.log("🚀 ~ file: get-order.js ~ line 21 ~ renderOrder ~ time", time)
+    
     const $total = $(`
       <tr>
         <td></td>
         <td>Total:</td>
         <td>$${order[0].total_price}.00</td>
         <td>Ordered at:</td>
-        <td>${date} ${time}.00</td>        
+        <td>${date} ${time}</td>        
       </tr>
     `);
 
