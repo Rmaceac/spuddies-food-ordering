@@ -7,7 +7,7 @@ $(() => {
 
   $submit.on('click', (e) =>  {
     //SET TIMEOUT & ADD SPINNER
-    setTimeout(checkout, 2000);
+    setTimeout(checkout, 4000);
     $potato = $('<p class="spinner">🥔</p>');
 
     $prepareOrder = $('<p class="spinner-text">Preparing your order...</p>');
