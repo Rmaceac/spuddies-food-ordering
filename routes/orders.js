@@ -8,19 +8,21 @@
 const express = require('express');
 const router  = express.Router();
 
-// Full route './orders/'
+// Full route './orders'
 router.get("/", (req, res) => {
   res.render("orders");
 });
 
 module.exports = (db) => {
-  router.get('/fetch', (req, res) => {
+  router.get('/:id', (req, res) => {
+    const orderID = req.params.id;
     db.query(`
     SELECT orders.id as order_id, order_time, sub_total, total_price, menu_items_id, quantity
     FROM orders
     JOIN order_items ON order_id = orders.id
-    WHERE order_id = 1;`)
+    WHERE order_id = $1;`, [orderID])
       .then(data => {
+        console.log("DATA:", data);
         const checkout = data.rows;
         res.json(checkout);
       })

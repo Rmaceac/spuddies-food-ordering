@@ -53,7 +53,8 @@ module.exports = (db) => {
 
     Promise.all(promises)
       .then(data => {
-        console.log("Promise.all:", data);
+        console.log("Promises resolved!");
+        // console.log("Promise.all:", data);
       });
   });
 
