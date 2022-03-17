@@ -65,16 +65,48 @@ button:hover {
 }
 
 /* ORDER CSS */
-.order-container {
+.order-container-disabled {
   display: flex;
   flex-direction: column;
   padding: 25px;
-
-  height: 50vh;
+  height: 20vh;
   border: 4px solid rgb(190, 158, 115);
   background-color: burlywood;
   background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
+}
 
+.re-disabled {
+  animation-name: slideUp;
+  animation-fill-mode: forwards;
+  animation-duration: 750ms;
+}
+
+@keyframes slideUp {
+  from {
+    height: 50vh;
+  } to {
+    height: 20vh;
+  }
+}
+
+.order-container-enabled {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border: 4px solid rgb(190, 158, 115);
+  background-color: burlywood;
+  background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
+  animation-name: slideDown;
+  animation-fill-mode: forwards;
+  animation-duration: 750ms;
+}
+
+@keyframes slideDown {
+  from {
+    height: 20vh;
+  } to {
+    height: 50vh;
+  }
 }
 
 .order-container-receipt {
@@ -156,11 +188,27 @@ td > button {
   padding-right: 15px;
   transition: 0.3s;
 }
+
+.check-out:disabled {
+  background-color: #f5f5f5;
+}
+
+.check-out:disabled:hover {
+  transform: scale(1);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.check-out:disabled:hover > span {
+  cursor: not-allowed;
+}
+
 .check-out span {
   cursor: pointer;
   font-size: 20px;
   transition: 0.5s;
 }
+
 //THIS STYLE ISN'T WORKING?
 span::after{
   content: ' > >';
@@ -177,10 +225,18 @@ span::after{
 }
 
 .check-out:hover > span::after {
-  transform: scale(4);
+  // transform: scale(4);
   opacity: 1;
   right: -5px;
 }
+
+.check-out:disabled > span::after {
+  // transform: scale(4);
+  opacity: 0;
+  right: -5px;
+}
+
+
 
 h2, h5 {
   text-align: center;
@@ -225,12 +281,12 @@ th {
 }
 
 #next, #previous {
-
   opacity: 1;
   transform: scale(2);
   width: fit-content;
   height: fit-content;
   margin: auto 0;
+  box-shadow: none;
 }
 
 .carousel-container {
