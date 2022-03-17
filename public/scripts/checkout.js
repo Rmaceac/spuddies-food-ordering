@@ -83,7 +83,7 @@ $(() => {
           $stageThree.hide();
         }, 5000);
         setTimeout( () => {
-          $ready = $('<h3>Your order is ready for pick-up!</h3>');
+          $ready = $('<h3>Your order has been submitted!</h3>');
           $('.loading-text').append($ready);
           $package.hide();
         }, 7000);
