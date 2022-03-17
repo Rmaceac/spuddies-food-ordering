@@ -2,9 +2,8 @@
 
 ## Overview
 
-Person 1: Explain why we chose this project.
-Person 2: Some of our challenges were... (git branchs/merge conflcits, figuring out how to get started, making multiple queries to the DB, carousel, not able to use require on the front-end etc.). Do this popcorn style where each of us has a chance to share something.
-Person 3 (Restaurant owner): Introduce the web page. Set the scene. "This is the Spuddies restaurant menu. We're going to have a pair of customers come in and place an order for pickup. We used Twilio API to allow us to send SMS notifications to both the restaurant and the clients regarding when their order will be ready".
+Ryan: Why we chose this project, how we'll run the demo.
+
 
 ### Stage 1: Client Order
 
@@ -38,9 +37,17 @@ Person 3 (Restaurant owner): Introduce the web page. Set the scene. "This is the
 
 4. Bow. Accept praise from lessers.
 
-## Credits
+## Leads
 Ryan - Database and API
-Travis - Front-End design and 
+Travis - Front-End design and functionality
 Dylan - Backend
 
-##Challenges
+Lots of pair + trio programming. Lots learned!
+
+## Challenges
+
+- Version control with git, merge conflicts.
+- Figuring out how to get started
+- Making multi-line queries to DB in a single query.
+- That damn carousel.
+- Inability to 'require' on the front-end.
