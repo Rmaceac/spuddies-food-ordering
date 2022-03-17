@@ -12,9 +12,11 @@ input[type=number]::-webkit-outer-spin-button {
   opacity: 1;
 }
 table {
-  height: 550px;
+
+  // height: 550px;
 }
 
 .restaurant > td {
   font-size: 20px !important;
+  padding: .5rem;
 }
