@@ -184,6 +184,10 @@ button:hover {
   text-align: center;
   line-height: 20px;
 }
+// .order-item {
+//   font-size: 30px;
+//   color: white;
+// }
 
 td > button {
   margin: 0;
@@ -271,7 +275,6 @@ td > button {
   transition: 0.5s;
 }
 
-//THIS STYLE ISN'T WORKING?
 span::after{
   content: ' > >';
   position: relative;
@@ -295,8 +298,6 @@ span::after{
   opacity: 0;
   right: -5px;
 }
-
-
 
 h2, h5 {
   text-align: center;
