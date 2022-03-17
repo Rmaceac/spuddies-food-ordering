@@ -16,15 +16,13 @@ $(() => {
     }
 
     const date = String(order[0].order_time).slice(0, 9);
-    console.log("🚀 ~ file: get-order.js ~ line 19 ~ renderOrder ~ date", date)
     const time = String(order[0].order_time).slice(14, 22);
-    console.log("🚀 ~ file: get-order.js ~ line 21 ~ renderOrder ~ time", time)
     
     const $total = $(`
-      <tr>
+      <tr class="restaurant">
         <td></td>
         <td>Total:</td>
-        <td>$${order[0].total_price}.00</td>
+        <td>$${order[0].total_price}</td>
         <td>Ordered at:</td>
         <td>${date} ${time}</td>        
       </tr>
@@ -37,7 +35,7 @@ $(() => {
   // CREATE NEW JQUERY ORDER OBJECT
   const addOrderItem = (object) => {
     const $orderItem = $(`
-      <tr>
+      <tr class='restaurant'>
         <td>${object.item}</td>
         <td>${object.quantity}</td>
         <td>$${object.sub_total}</td>
