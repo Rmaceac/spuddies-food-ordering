@@ -42,6 +42,18 @@ main {
   align-content: flex-start;
   position: relative;
 }
+.logo:hover {
+  animation: wiggle 2.5s infinite;
+  cursor: pointer;
+}
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(10deg); }
+   95% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
 button {
   font-family: 'Acme', sans-serif;
   color: white;
