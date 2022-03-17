@@ -185,7 +185,7 @@ button:hover {
   line-height: 20px;
 }
 td {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .quantity {
   padding: 0px 5px;
@@ -207,29 +207,21 @@ td > button {
 .submit-total-container {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-evenly;
 }
-
 .orderTotalContainer {
   margin-top: 20px;
-  text-align: center;
   align-self: flex-end;
+  text-align: center;
   width: fit-content;
   font-size: 1.5rem;
   padding: 0.25rem 0.25rem;
-
 }
 #orderTotal {
   text-align: center;
+  font-style: italic;
   border-radius: 4px;
   background-color: rgba(214, 221, 220, 0.939);
   border: 2px solid black;
-  margin: 0px;
-  padding: 0px;
-}
-
-#orderTotal {
-  font-style: italic;
 }
 
 /* MENU CSS */
@@ -250,11 +242,10 @@ td > button {
   color: white;
   border: none;
   cursor: pointer;
-  margin: 0px;
+  margin: 0px 100px 0px 0px;
   padding: 0;
   padding-left: 35px;
   padding-right: 15px;
-  transition: 0.3s;
 }
 
 .check-out:disabled {
