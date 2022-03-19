@@ -1,35 +1,25 @@
 
 $(() => {
 
-
   const $submit = $('.check-out');
-  const $menuContainer = $('.menu-container')
+  const $menuContainer = $('.menu-container');
 
-
-
+  // SUBMIT ORDER - chain of events on 'click'
   $submit.on('click', (e) =>  {
     //SET TIMEOUT & ADD SPINNER
     setTimeout(checkout, 4000);
     $potato = $('<p class="spinner">🥔</p>');
-
     $prepareOrder = $('<p class="spinner-text">Preparing your order...</p>');
-
     $('.check-out').text('');
     $('.check-out').append($prepareOrder, $potato);
 
-
-
-
-
-
     // REPLACE SUBMIT WITH ORDER CONFIRMATION
-    /*eslint-disable*/
     function checkout() {
     $.ajax('checkout.html', { method: 'GET' })
     .then(function (checkout) {
       $menuContainer.replaceWith(checkout);
 
-      // API CALL - TWILLIO
+      // API CALL - TWILLIO - SEND TEXT TO RESTAURANT OWNER
       $.ajax({
         url: "http://localhost:8084/api/submit",
         method: "GET"
@@ -52,7 +42,6 @@ $(() => {
 
         // DISPLAY RECEIPT
         $orderContainer = $('.order-container');
-        // console.log($orderContainer);
         $orderContainer.removeClass();
         $orderContainer.addClass('order-container-receipt');
 
@@ -62,13 +51,13 @@ $(() => {
 
         // ADD LOADING BAR
         $stageOne = $('<div class="progress"><div class="stageOne progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div>');
-        $received = $('<p>We have received your order</p>')
+        $received = $('<p>We have received your order</p>');
         $('.loading-text').append($received);
         $('.loading-bar').append($stageOne);
 
+        // SEND TEXT BACK TO THE CLIENT & PAUSE LOADING BAR ANIMATION
         let something = "test"
         const scan = setInterval(() => {
-          // AJAX TEST
         if (something !== "test") {
           clearInterval(scan);
           setTimeout( () => {
@@ -102,6 +91,7 @@ $(() => {
           }, 15000);
         }
 
+        // RESUME LOADING BAR AFTER RESTAURANT ETA TEXT IS RECEIVED
         $.ajax({
           url: "http://localhost:8084/api/submit/eta",
           method: "GET"
@@ -113,13 +103,10 @@ $(() => {
           .catch((err) => {
             console.log("Error: ", err);
           });
-
         }, 1000);
-
       });
     }
   });
-  /*eslint-enable*/
 
 
 });
