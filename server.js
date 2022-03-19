@@ -46,7 +46,6 @@ app.use("/api/submit", submitRoutes(db));
 app.use("/api/menu", menuRoutes(db));
 app.use("/orders", ordersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-// Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
