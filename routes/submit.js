@@ -18,6 +18,7 @@ module.exports = (db) => {
 
   router.post("/eta", (req, res) => {
     const eta = req.body.eta;
+    // SENDS ETA SMS MSG
     // orderEstimate(eta);
     etaObj["eta"] = eta;
 
@@ -25,7 +26,7 @@ module.exports = (db) => {
 
     const time = Number(eta.slice(0, 2));
     // setTimeout(
-      // orderReadyMsg, time * 1000);
+    // orderReadyMsg, time * 1000);
   });
 
   router.get('/eta', (req, res) => {
