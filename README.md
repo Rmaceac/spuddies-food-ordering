@@ -1,8 +1,8 @@
 
 ## Final Product
-!["Menu View"](https://github.com/T-Pirozzini/tweeter/blob/master/public/docs/desktop-view.png?raw=true)
-!["Order View"](https://github.com/T-Pirozzini/tweeter/blob/master/public/docs/tablet-view.png?raw=true)
-!["Restaurant View"](https://github.com/T-Pirozzini/tweeter/blob/master/public/docs/scrolled-view.png?raw=true)
+!["Menu View"](https://github.com/Rmaceac/midterm-project/blob/master/public/docs/spuddies-front-page.png?raw=true)
+!["Order View"](https://github.com/Rmaceac/midterm-project/blob/master/public/docs/spuddies-order-placed.png?raw=true)
+!["Restaurant View"](https://github.com/Rmaceac/midterm-project/blob/master/public/docs/spuddies-restaurant-pov.png?raw=true)
 
 LHL Node Skeleton
 =========
