@@ -112,7 +112,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   padding: 25px;
-  height: 20vh;
+  height: 22vh;
   border: 4px solid rgb(190, 158, 115);
   background-color: burlywood;
   background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
@@ -126,7 +126,7 @@ button:hover {
   from {
     height: 50vh;
   } to {
-    height: 20vh;
+    height: 22vh;
   }
 }
 .order-container-enabled {
@@ -142,7 +142,7 @@ button:hover {
 }
 @keyframes slideDown {
   from {
-    height: 20vh;
+    height: 22vh;
   } to {
     height: 50vh;
   }
