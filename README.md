@@ -1,3 +1,9 @@
+
+## Final Product
+!["Menu View"](https://github.com/T-Pirozzini/tweeter/blob/master/public/docs/desktop-view.png?raw=true)
+!["Order View"](https://github.com/T-Pirozzini/tweeter/blob/master/public/docs/tablet-view.png?raw=true)
+!["Restaurant View"](https://github.com/T-Pirozzini/tweeter/blob/master/public/docs/scrolled-view.png?raw=true)
+
 LHL Node Skeleton
 =========
 
