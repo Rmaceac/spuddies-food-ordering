@@ -23,7 +23,10 @@ module.exports = (db) => {
 
     res.send("Notification Sent");
 
+    // VARIABLE TIME TAKES FIRST TWO CHARS OF INPUT FIELD
     const time = Number(eta.slice(0, 2));
+
+    // SENDS ORDER READY SMS MSG AFTER DELAY USED ON SEND ETA BUTTON (only works with seconds up to 99)
     setTimeout(
       orderReadyMsg, time * 1000);
   });
@@ -34,19 +37,18 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
     console.log("Order received");
+    //SENDS ORDER SUBMITTED TEXT
     // orderSubmitted();
   });
 
   router.post("/order", (req, res) => {
     console.log("Post request made to /api/submit/order");
-    // console.log(`Req.body: ${req.body.getOrder}`);
 
     const queryStringTotal = `INSERT INTO orders (user_id, total_price) VALUES (2, $1) RETURNING *;`;
     const orderItem = `INSERT INTO order_items (order_id, menu_items_id, quantity, sub_total) VALUES ($1, $2, $3, $4);`;
 
-    // calculates total of each subtoal of each item
+    // CALCULATES THE TOTAL OF ALL SUBTOTALS OF EACH ORDER
     const total = req.body.getOrder.reduce((a,c) => Number(a) + Number(c.subtotal), 0);
-    // console.log("Total:", total);
 
     let promises = [];
     let params = [];

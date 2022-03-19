@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+// FUNCTIONS FOR SENDING SMS VIA TWILIO
+
 const accountSid = process.env.API_SID;
 const authToken = process.env.token;
 const client = require('twilio')(accountSid, authToken);
