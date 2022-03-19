@@ -1,8 +1,8 @@
+// POTATO SPINNER
 .spinner {
   font-size: 300%;
   animation: spin-animation 1.0s 4000;
 }
-
 @keyframes spin-animation {
   0% {
     transform: rotate(0deg);
@@ -11,22 +11,20 @@
     transform: rotate(359deg);
   }
 }
-
 .spinner-text {
   font-size: 1.5rem;
 }
 
+// CHECKOUT
 .check-out {
   margin-top: 30px;
   align-self: center;
   width: fit-content;
   max-height: 120px;
 }
-
 .prep {
   font-size: 24px;
 }
-
 .received-container {
   display: flex;
   flex-direction: column;
@@ -36,12 +34,11 @@
   background-size: 40vh;
 }
 
+// LOADING BAR
 .loading-bar {
   height: 50px;
   width: 80%;
-  // background-color: rgba(255, 255, 255, 0.116);
 }
-
 .progress {
   height: 50px;
   background-color: rgba(255, 255, 255, 0.486);
@@ -52,15 +49,12 @@
 }
 .progress .stageTwo {
   animation: loading-bar-two 7.0s;
-  // animation-play-state: paused;
 }
 .progress .stageThree {
   animation: loading-bar-three 5.0s;
-  // animation-play-state: paused;
 }
 .progress .stageFour {
   animation: loading-bar-four 5.0s;
-  // animation-play-state: paused;
 }
 @keyframes loading-bar-one {
   from  {width: 0px;}
@@ -85,14 +79,12 @@
   font-size: 2rem;
   border-radius: 10px;
 }
-
 .loading-text > h3 {
   background-color: #ffffffcf;
   padding: 10px;
   font-size: 3rem;
   border-radius: 10px;
 }
-
 .loading-text > p {
   font-size: 20px;
   font-weight: 600;

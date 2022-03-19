@@ -1,14 +1,14 @@
-// load .env data into process.env
+// LOAD .env DATA INTO process.env
 require("dotenv").config();
 
-// Web server config
+// WEB SERVER CONFIG
 const PORT = process.env.PORT || 8084;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
-// PG database client/connection setup
+// PG DATABASE CLIENT/CONNECTION SETUP
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
@@ -33,25 +33,17 @@ app.use(
 
 app.use(express.static("public"));
 
-// Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
+// SEPARATED ROUTES FOR EACH RESOURCE
 const submitRoutes = require("./routes/submit");
 const menuRoutes = require("./routes/menu");
 const ordersRoutes = require("./routes/orders");
-const widgetsRoutes = require("./routes/widgets");
 
-// Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
+// MOUNT EACH RESOURCE ROUTE
 app.use("/api/submit", submitRoutes(db));
 app.use("/api/menu", menuRoutes(db));
 app.use("/orders", ordersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
-// Note: mount other resources here, using the same pattern above
 
-// Home page
-// Warning: avoid creating more routes in this file!
-// Separate them into separate routes files (see above).
-
+// RENDER HOMEPAGE
 app.get("/", (req, res) => {
   res.render("index");
 });
