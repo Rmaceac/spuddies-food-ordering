@@ -18,17 +18,17 @@ module.exports = (db) => {
 
   router.post("/eta", (req, res) => {
     const eta = req.body.eta;
-    // SENDS ETA SMS MSG
-    // orderEstimate(eta);
+    orderEstimate(eta);
     etaObj["eta"] = eta;
 
     res.send("Notification Sent");
 
     // VARIABLE TIME TAKES FIRST TWO CHARS OF INPUT FIELD
     const time = Number(eta.slice(0, 2));
+
     // SENDS ORDER READY SMS MSG AFTER DELAY USED ON SEND ETA BUTTON (only works with seconds up to 99)
-    // setTimeout(
-    // orderReadyMsg, time * 1000);
+    setTimeout(
+      orderReadyMsg, time * 1000);
   });
 
   router.get('/eta', (req, res) => {
