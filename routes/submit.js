@@ -37,8 +37,6 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
     console.log("Order received");
-    //SENDS ORDER SUBMITTED TEXT
-    // orderSubmitted();
   });
 
   router.post("/order", (req, res) => {
@@ -65,11 +63,10 @@ module.exports = (db) => {
         }
         Promise.all(promises)
           .then(data => {
-            orderSubmitted(orderID);
+            // orderSubmitted(orderID);
             console.log("Promises resolved!");
           });
       });
-
   });
 
   return router;
