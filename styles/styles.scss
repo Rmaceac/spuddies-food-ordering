@@ -1,13 +1,10 @@
 body {
   display: flex;
   justify-content: center;
-  // background-color: aqua;
 }
 main {
   display: flex;
   flex-direction: column;
-  // border: 1px solid black;
-  // box-shadow: 5px 10px #888888;
   width: 80vw;
 }
 
@@ -30,7 +27,6 @@ main {
   min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-
 }
 .dropdown-content a {
   color: black;
@@ -94,7 +90,6 @@ main {
    95% { transform: rotate(-10deg); }
   100% { transform: rotate(0deg); }
 }
-
 button {
   font-family: 'Acme', sans-serif;
   color: white;
@@ -103,11 +98,6 @@ button {
   margin: 0px 5px 10px;
   padding: 5px 10px;
   border-radius: 6px;
-
-//   background-color: #8c8c17;
-// background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  // background-color: #8a6300;
-  // background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   background-color: #7a4300;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
 }
@@ -117,7 +107,7 @@ button:hover {
   transition: 0.3s;
 }
 
-/* ORDER CSS */
+/* CURRENT-ORDER SECTION */
 .order-container-disabled {
   display: flex;
   flex-direction: column;
@@ -127,13 +117,11 @@ button:hover {
   background-color: burlywood;
   background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
 }
-
 .re-disabled {
   animation-name: slideUp;
   animation-fill-mode: forwards;
   animation-duration: 750ms;
 }
-
 @keyframes slideUp {
   from {
     height: 50vh;
@@ -141,7 +129,6 @@ button:hover {
     height: 20vh;
   }
 }
-
 .order-container-enabled {
   display: flex;
   flex-direction: column;
@@ -153,7 +140,6 @@ button:hover {
   animation-fill-mode: forwards;
   animation-duration: 750ms;
 }
-
 @keyframes slideDown {
   from {
     height: 20vh;
@@ -161,7 +147,6 @@ button:hover {
     height: 50vh;
   }
 }
-
 .order-container-receipt {
   display: flex;
   flex-direction: column;
@@ -171,16 +156,13 @@ button:hover {
   background-color: #f5f5f5;
   background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");
 }
-
 .order-title {
   text-align: center;
   padding-bottom: 5px;
 }
-
 .order-entries {
   padding: 20px;
 }
-
 .order-entries > tr > td, tr > th {
   text-align: center;
   line-height: 20px;
@@ -197,11 +179,9 @@ td > button {
   padding: 0 10px;
   line-height: 20px;
 }
-
 .add {
   border-radius: 6px 15px 15px 6px;
 }
-
 .minus {
   border-radius: 15px 6px 6px 15px;
 }
@@ -213,7 +193,6 @@ input {
   width: 30px;
   padding: 10px;
 }
-
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   opacity: 1;
@@ -238,7 +217,7 @@ input[type=number]::-webkit-outer-spin-button {
   border: 2px solid black;
 }
 
-/* MENU CSS */
+/* MENU SECTION */
 .menu-container {
   display: flex;
   flex-direction: column;
@@ -261,27 +240,22 @@ input[type=number]::-webkit-outer-spin-button {
   padding-left: 35px;
   padding-right: 15px;
 }
-
 .check-out:disabled {
   background-color: #f5f5f5;
 }
-
 .check-out:disabled:hover {
   transform: scale(1);
   box-shadow: none;
   cursor: not-allowed;
 }
-
 .check-out:disabled:hover > span {
   cursor: not-allowed;
 }
-
 .check-out span {
   cursor: pointer;
   font-size: 20px;
   transition: 0.5s;
 }
-
 span::after{
   content: ' > >';
   position: relative;
@@ -295,17 +269,15 @@ span::after{
   box-shadow: 0 0 5px 2px #9f6200;
 }
 .check-out:hover > span::after {
-  // transform: scale(4);
   opacity: 1;
   right: -5px;
 }
-
 .check-out:disabled > span::after {
-  // transform: scale(4);
   opacity: 0;
   right: -5px;
 }
 
+// GLOBAL HEADERS
 h2, h5 {
   text-align: center;
 }
@@ -322,7 +294,6 @@ th, .total-cost {
   color: black;
   -webkit-text-stroke: 1px white;
 }
-
 .menu-header {
   display: flex;
   justify-content: center;
@@ -330,6 +301,7 @@ th, .total-cost {
   padding-bottom: 20px;
 }
 
+// MENU SECTION & CAROUSEL FEATURE
 .menu-items {
   display: flex;
   justify-content: space-evenly;
@@ -338,16 +310,13 @@ th, .total-cost {
   padding: 50px;
   padding-bottom: 80px;
 }
-
 .item {
   width: 33%;
   max-height: 170px;
 }
-
 .item > img {
   width: 100%;
 }
-
 #next, #previous {
   opacity: 1;
   transform: scale(2);
@@ -356,21 +325,17 @@ th, .total-cost {
   margin: auto 0;
   box-shadow: none;
 }
-
 .carousel-container {
   padding: 0 50px;
 }
-
 .carousel-control-next-icon {
   opacity: 1;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
-
 .carousel-control-prev-icon {
   opacity: 1;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
 }
-
 .carousel-control-next-icon:hover {
   cursor: pointer;
   animation-name: pointerRight;
@@ -378,7 +343,6 @@ th, .total-cost {
   animation-duration: 500ms;
   animation-timing-function: ease-in-out;
 }
-
 .carousel-control-prev-icon:hover {
   cursor: pointer;
   animation-name: pointerLeft;
@@ -386,7 +350,6 @@ th, .total-cost {
   animation-duration: 500ms;
   animation-timing-function: ease-in-out;
 }
-
 @keyframes pointerLeft {
   0% {
     transform: translateX(0);
@@ -396,7 +359,6 @@ th, .total-cost {
     transform: translateX(0);
   }
 }
-
 @keyframes pointerRight {
   0% {
     transform: translateX(0);
@@ -407,8 +369,7 @@ th, .total-cost {
   }
 }
 
-/* Footer CSS */
-
+/* FOOTER SECTION */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -416,14 +377,9 @@ th, .total-cost {
   opacity: 70%;
   padding: 25px;
 }
-
 .social:hover, .copyright:hover, .chat:hover {
   color: rgb(181, 106, 20);
 }
-
 .copyright {
   font-size: 20px;
 }
-
-
-

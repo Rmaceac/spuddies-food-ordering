@@ -1,13 +1,12 @@
 $(() => {
 
-
   const $submit = $('#eta');
   const $estimate = $('#estimate');
 
   $submit.on('click', function(e) {
     e.preventDefault();
 
-    // Text from estimate input field
+    // VALUE OF SEND ETA INPUT FIELD (eta in seconds)
     const estimate = {
       eta: $estimate.val()
     };

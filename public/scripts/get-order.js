@@ -18,6 +18,7 @@ $(() => {
     const date = String(order[0].order_time).slice(0, 10);
     const time = String(order[0].order_time).slice(11, 22);
     
+    // JQUERY FOR ORDER TOTAL AND TIMESTAMP INFO
     const $total = $(`
       <tr class="restaurant">
         <td></td>
@@ -32,7 +33,7 @@ $(() => {
   };
   
   
-  // CREATE NEW JQUERY ORDER OBJECT
+  // JQUERY FOR ORDER'S INDIVIDUAL LINE ITEM INFO
   const addOrderItem = (object) => {
     const $orderItem = $(`
       <tr class='restaurant'>
@@ -44,11 +45,11 @@ $(() => {
     return $orderItem;
   };
   
+  // BEHAVIOR FOR FETCH ORDER BUTTON
   $fetchOrder.on('click', (e) =>  {
     e.preventDefault();
-
-    console.log("Fetch Order button pressed");
     
+    // INCLUDES ORDERID VALUE IN TWILIO TEXT SENT TO RESTAURANT
     $.ajax({
       url: `http://localhost:8084/orders/${$orderID.val()}`,
       method: 'GET',
@@ -65,6 +66,4 @@ $(() => {
     console.log("Order ID:", $orderID.val());
     $orderID.val("");
   });
-
-
 });
