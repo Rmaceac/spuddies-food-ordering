@@ -1,3 +1,9 @@
+## Overview
+A mock-up of an application designed to allow hungry customers to place food orders (for pickup) with a fictitious restaurant (Spuddies). The app includes interfaces for both customers and restaurant owners. 
+
+Users can browse a menu, filter by category, choose individual items, update their quantity, remove unwanted items, see item subtotals and a grand total, which updates live. When they place an order, they receive visual feedback that the order has been received and a loading bar shows the progress of their order towards pick-up-ready status. 
+
+The restaurant owner will receive a notification via SMS (using Twilio's API) that an order has been placed, along with the order number. They can fetch information about any order by entering the order number on their side of the website. They can then send the customer a SMS notification with an estimate as to when their order will be ready for pickup. The loading bar on the customer side will advance in proportion to the ETA provided. When the order is ready, the customer will receive another SMS notification to let them know.
 
 ## Final Product
 !["Menu View"](https://github.com/Rmaceac/midterm-project/blob/master/public/docs/spuddies-front-page.png?raw=true)
