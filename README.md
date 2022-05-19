@@ -8,8 +8,8 @@ This was our Mid-Term Project at Lighthouse Labs.
 
 ## Authors
 - [Travis Pirozzini ](https://github.com/T-Pirozzini)
-- [Ryan MacEachern](https://github.com/Nachosonfriday)
-- [Dylan Pirrotta](https://github.com/BBrandford11)
+- [Ryan MacEachern](https://github.com/Rmaceac)
+- [Dylan Pirrotta](https://github.com/dpirrott)
 
 ## :video_camera: Live Demo
 <a href="">Click Here!</a>
