@@ -1,4 +1,4 @@
-# :Potato: Spuddies Restaurant
+# 🥔 Spuddies Restaurant
 
 ## Description
 At Spuddies a user can cycle through menu items and place an order. After an order is placed the user can submit the order for payment using the Stripe API.
