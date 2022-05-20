@@ -6,7 +6,7 @@
  */
 
 const express = require('express');
-const { orderReadyMsg, orderEstimate, orderSubmitted } = require('../public/scripts/sms');
+const { orderReadyMsg, orderEstimate, orderSubmitted } = require('public/scripts/sms');
 const router  = express.Router();
 const etaObj = {
   eta: "test"
